@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<!--
+TripWise Clean Build (base copy)
+
+Next integration pass:
+- Replace duplicated predictMileage() with a single function
+- Merge Vehicle Details into the Step 1 card
+- Add Source + Vehicle Type fields
+- Wire Predict Budget UI to /api/predict-budget
+- Prepare automatic route distance integration
+-->
+
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripWise - Life Is Adventure</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <!-- FontAwesome for Icons & Chart.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        /* Smooth Global Core Transition Setup */
+        *, *::before, *::after {
+            transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1), 
+                        border-color 500ms cubic-bezier(0.4, 0, 0.2, 1), 
+                        color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Prevent transition interruptions on inputs/images */
+        input, select, textarea, img {
+            transition: border-color 300ms ease, box-shadow 300ms ease !important;
+        }
+
+        /* Fluid Morphing Animation for the Theme Button */
+        .theme-icon-spin {
+            animation: iconSpin 550ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        @keyframes iconSpin {
+            0% { transform: scale(0.6) rotate(-90deg); opacity: 0; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        /* Budget Breakdown Styling */
+        .budget-breakdown p {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-weight: 600;
+        }
+
+        .budget-breakdown h2 {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            color: #22c55e;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="bg-[#f7f9fc] dark:bg-[#0d0d0d] text-zinc-800 dark:text-gray-200 antialiased selection:bg-purple-600 selection:text-white scroll-smooth">
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header class="w-full bg-white/80 dark:bg-[#0d0d0d]/90 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-200/80 dark:border-zinc-800/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold tracking-wide text-zinc-900 dark:text-white">Trip<span class="text-purple-600 dark:text-purple-500">Wise</span></a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-zinc-600 dark:text-zinc-400">
+                <a href="#" class="text-purple-600 dark:text-white border-b-2 border-purple-600 dark:border-purple-500 pb-1">Home</a>
+                <a href="#trip-dashboard" class="hover:text-purple-600 dark:hover:text-purple-400 transition flex items-center gap-1.5">
+                    Dashboard 
+                    <span class="bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[10px] font-bold px-1.5 py-0.5 rounded-md border border-purple-500/20">Live</span>
+                </a>
+                <a href="#about-us" class="hover:text-purple-600 dark:hover:text-purple-400 transition">About Us</a>
+                <a href="#popular" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Places</a>
+                <a href="#reviews" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Reviews</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <!-- SEAMLESS THEME SWITCHER BUTTON -->
+                <button id="themeToggleBtn" class="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-amber-400 flex items-center justify-center hover:scale-105 active:scale-95 transition focus:outline-none overflow-hidden" aria-label="Toggle Theme">
+                    <div id="iconContainer" class="theme-icon-spin"></div>
+                </button>
+
+                <a href="auth.html?mode=login" class="text-sm font-bold text-zinc-700 dark:text-zinc-300 hover:text-purple-600 dark:hover:text-white px-4 py-2 transition">Login</a>
+                <a href="auth.html?mode=signup" class="text-sm font-bold bg-purple-600 dark:bg-zinc-800 hover:bg-purple-700 dark:hover:bg-zinc-700 text-white px-5 py-2.5 rounded-xl transition shadow-md shadow-purple-600/20 dark:border dark:border-zinc-700">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative h-[650px] flex flex-col items-center justify-center text-center px-4 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(13,13,13,0.2), rgba(247,249,252,1)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');" id="heroBg">
+        <div class="max-w-4xl z-10 w-full px-2">
+            <span class="bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 font-extrabold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 inline-block">✨ Keep Track of your trips with us!</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-tight mb-8">
+                Life Is Adventure Make<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-orange-500 dark:from-white dark:to-white">The Best Of It</span>
+            </h1>
+            
+            <!-- Replaced Search Bar with Add Trip and Select Trip Action Buttons -->
+            <div class="bg-white/90 dark:bg-white/10 dark:backdrop-blur-xl p-4 rounded-2xl max-w-xl mx-auto border border-zinc-200 dark:border-white/10 shadow-xl dark:shadow-2xl flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+                <a href="#trip-dashboard" onclick="focusAddTrip()" class="w-full sm:w-1/2 bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition shadow-lg shadow-purple-600/30 active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-plus-circle"></i> Add Trip
+                </a>
+                <a href="#trip-dashboard" onclick="focusSelectTrip()" class="w-full sm:w-1/2 bg-zinc-900 hover:bg-black dark:bg-zinc-800 dark:hover:bg-zinc-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition shadow-md active:scale-95 flex items-center justify-center gap-2 border border-zinc-700 dark:border-zinc-600">
+                    <i class="fa-solid fa-folder-open"></i> Select Trip
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. QUICK FEATURES GRID -->
+    <section class="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-2xl flex items-center justify-between group hover:border-purple-500 hover:shadow-lg dark:hover:border-purple-500/50 transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition"><i class="fa-solid fa-hotel text-lg"></i></div>
+                    <span class="text-sm font-bold text-zinc-800 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition">Find Your Dream Stay</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right text-zinc-400 dark:text-zinc-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition text-sm"></i>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-2xl flex items-center justify-between group hover:border-purple-500 hover:shadow-lg dark:hover:border-purple-500/50 transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition"><i class="fa-solid fa-tags text-lg"></i></div>
+                    <span class="text-sm font-bold text-zinc-800 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition">Cheap Holiday Packages</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right text-zinc-400 dark:text-zinc-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition text-sm"></i>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-2xl flex items-center justify-between group hover:border-purple-500 hover:shadow-lg dark:hover:border-purple-500/50 transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition"><i class="fa-solid fa-passport text-lg"></i></div>
+                    <span class="text-sm font-bold text-zinc-800 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition">Effortless Check-in</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right text-zinc-400 dark:text-zinc-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition text-sm"></i>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-2xl flex items-center justify-between group hover:border-purple-500 hover:shadow-lg dark:hover:border-purple-500/50 transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition"><i class="fa-solid fa-compass text-lg"></i></div>
+                    <span class="text-sm font-bold text-zinc-800 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition">Explore Places</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right text-zinc-400 dark:text-zinc-600 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition text-sm"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LIVE TRIP MANAGEMENT DASHBOARD SECTION -->
+    <section id="trip-dashboard" class="max-w-7xl mx-auto px-6 pt-24">
+        <div class="flex flex-col lg:flex-row items-start justify-between gap-6 mb-8">
+            <div>
+                <h2 class="text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">Trip Analytics & Expenses</h2>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400">Track dynamic daily spend architectures, traveler loads, and budget utilization indexes.</p>
+            </div>
+            <div class="flex items-center space-x-2 bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 rounded-xl px-4 py-2 text-xs font-semibold shadow-sm">
+                <span id="apiStatusIndicator" class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-bounce"></span>
+                <span id="apiStatusText" class="text-zinc-600 dark:text-zinc-400">Connecting Database Server...</span>
+            </div>
+        </div>
+
+        <!-- Metric Cards Dashboard Display -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm">
+                <span class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Total Budget</span>
+                <span class="text-2xl font-black text-zinc-900 dark:text-white" id="lblTotalBudget">₹0</span>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm">
+                <span class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Total Expenses</span>
+                <span class="text-2xl font-black text-rose-500 dark:text-rose-400" id="lblTotalExpenses">₹0</span>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm">
+                <span class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Remaining Budget</span>
+                <span class="text-2xl font-black text-emerald-500 dark:text-emerald-400" id="lblRemainingBudget">₹0</span>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm">
+                <span class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Travelers</span>
+                <span class="text-2xl font-black text-purple-600 dark:text-purple-400" id="lblTravelersCount">0 Members</span>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-5 rounded-2xl shadow-sm">
+                <span class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Duration</span>
+                <span class="text-2xl font-black text-amber-500 dark:text-amber-400" id="lblTripDuration">0 Days</span>
+            </div>
+        </div>
+
+        <!-- Budget Progress Utilization Bar -->
+        <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-2xl shadow-sm mb-8">
+            <div class="flex justify-between items-center text-xs font-bold mb-2 uppercase tracking-wide">
+                <span class="text-zinc-500">Budget Utilization Status</span>
+                <span id="lblProgressPercentage" class="text-purple-600 dark:text-purple-400">0% Used</span>
+            </div>
+            <div class="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-3 overflow-hidden">
+                <div id="utilizationProgressBar" class="bg-gradient-to-r from-purple-500 via-indigo-500 to-rose-500 h-full rounded-full" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- ITINERARY CUSTOMIZATION & CONFIGURATION LAYER -->
+        <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-3xl shadow-sm mb-8">
+            <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-4 uppercase tracking-wide flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-purple-500"></i> Step 1: Customize Itinerary Setup & Machine Learning Predictions
+            </h3>
+            
+            <!-- Unified Configuration Form Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Core Trip Routing -->
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Source City</label>
+                    <input type="text" id="tripSource" value="Bangalore" placeholder="e.g. Bangalore" class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Destination / Saved Trips</label>
+                    <div class="flex flex-col gap-2">
+                        <!-- Text input for calculating new trip predictions -->
+                        <input type="text" id="tripDestination" placeholder="Type new destination (e.g. Goa)" class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                        
+                        <div class="text-center text-[10px] font-bold text-zinc-400 uppercase">OR</div>
+                        
+                        <!-- Dropdown menu to load previous trips from database -->
+                        <select id="tripSelectDropdown" onchange="handleTripSelectionChange()" class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="">-- Load an Older Trip --</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Trip Duration (Days)</label>
+                    <input type="number" id="tripDays" value="7" min="1" max="90" class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                    <input type="hidden" id="inputDurationConfig" value="7">
+                </div>
+
+                <!-- Budget & Logistics -->
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Base Budget Goal (INR)</label>
+                    <input type="number" id="inputBudgetConfig" value="150000" min="1000" class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Travelers Count</label>
+                    <div class="flex items-center bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden h-11">
+                        <button type="button" onclick="adjustTravelersCount(-1)" class="w-12 h-full text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition"><i class="fa-solid fa-minus text-xs"></i></button>
+                        <span id="configTravelersVal" class="flex-1 text-center text-sm font-bold text-zinc-900 dark:text-white">4</span>
+                        <button type="button" onclick="adjustTravelersCount(1)" class="w-12 h-full text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition"><i class="fa-solid fa-plus text-xs"></i></button>
+                        <input type="hidden" id="travellers" value="4">
+                    </div>
+                </div>
+
+                <!-- TRIP TYPE & BUDGET CATEGORY FIELDS -->
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Trip Type & Budget Category</label>
+                    <div class="flex gap-2">
+                        <select id="tripType" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="Friends">Friends</option>
+                            <option value="Family">Family</option>
+                            <option value="Solo">Solo</option>
+                            <option value="Couple">Couple</option>
+                        </select>
+                        <select id="budgetCategory" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="Moderate">Moderate</option>
+                            <option value="Budget">Budget</option>
+                            <option value="Luxury">Luxury</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC BRAND & MODEL DROPDOWNS -->
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Brand & Model</label>
+                    <div class="flex gap-2">
+                        <select id="brand" onchange="updateModelOptions()" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="">Brand</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Kia">Kia</option>
+                            <option value="MG">MG</option>
+                            <option value="Mahindra">Mahindra</option>
+                            <option value="Maruti Suzuki">Maruti Suzuki</option>
+                            <option value="Tata">Tata</option>
+                            <option value="Toyota">Toyota</option>
+                        </select>
+                        <select id="model" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="">Model</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Vehicle Year & Type</label>
+                    <div class="flex gap-2">
+                        <input type="number" id="vehicleYear" value="2022" placeholder="Year" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-3 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                        <select id="vehicleType" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="Car">Car</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Bike">Motorcycle</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Fuel & Transmission</label>
+                    <div class="flex gap-2">
+                        <select id="fuelType" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="CNG">CNG</option>
+                            <option value="Electric">Electric</option>
+                        </select>
+                        <select id="transmission" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="Manual">Manual</option>
+                            <option value="Automatic">Automatic</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Seats & Odometer (km)</label>
+                    <div class="flex gap-2">
+                        <input type="number" id="seatingCapacity" value="5" placeholder="Seats" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-3 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                        <input type="number" id="odometer" value="25000" placeholder="Odometer km" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-3 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Vehicle Condition</label>
+                    <select id="vehicleCondition" class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                        <option value="Excellent">Excellent</option>
+                        <option value="Good">Good</option>
+                        <option value="Average">Average</option>
+                        <option value="Poor">Poor</option>
+                    </select>
+                </div>
+
+                <!-- CROWD PREDICTION INPUT PARAMETERS -->
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Travel Month & Festival</label>
+                    <div class="flex gap-2">
+                        <select id="travelMonth" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                        <select id="festivalSeason" class="w-1/2 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-2 py-2.5 text-xs font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="No">No Festival</option>
+                            <option value="Yes">Festival Season</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Timing & Weather</label>
+                    <div class="flex gap-2">
+                        <select id="weekend" class="w-1/3 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-1 py-2.5 text-[11px] font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="Weekday">Weekday</option>
+                            <option value="Weekend">Weekend</option>
+                        </select>
+                        <select id="schoolHoliday" class="w-1/3 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-1 py-2.5 text-[11px] font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="No">No Hol</option>
+                            <option value="Yes">School Hol</option>
+                        </select>
+                        <select id="weather" class="w-1/3 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-1 py-2.5 text-[11px] font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                            <option value="Pleasant">Pleasant</option>
+                            <option value="Hot">Hot</option>
+                            <option value="Cold">Cold</option>
+                            <option value="Rainy">Monsoon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Action Center</label>
+                    <button type="button" onclick="runAIModels()" class="w-full h-11 bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold px-4 rounded-xl transition shadow-md flex items-center justify-center gap-1">
+                        <i class="fa-solid fa-brain"></i> Calculate ML Predictions
+                    </button>
+                </div>
+            </div>
+
+            <!-- Live ML Prediction Dashboard Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 p-4 bg-zinc-50 dark:bg-[#0d0d0d]/40 rounded-2xl border border-zinc-100 dark:border-zinc-800/50">
+                <!-- 1. Optimal Month Card -->
+                <div class="p-3 bg-white dark:bg-[#141414] rounded-xl border border-zinc-200/60 dark:border-zinc-800 flex flex-col justify-between">
+                    <span class="text-[10px] font-bold text-purple-600 dark:text-purple-400 tracking-wider uppercase mb-1">🤖 Optimal Month</span>
+                    <span id="recommendedMonth" class="text-base font-extrabold text-zinc-800 dark:text-white">Awaiting Input...</span>
+                </div>
+
+                <!-- 2. BUDGET BREAKDOWN CARD (REPLACED SINGLE ESTIMATED BUDGET CARD) -->
+                <div class="p-4 bg-white dark:bg-[#141414] rounded-xl border border-zinc-200/60 dark:border-zinc-800 flex flex-col prediction-card">
+                    <h3 class="text-xs font-bold text-indigo-600 dark:text-indigo-400 tracking-wider uppercase mb-2">💰 Budget Breakdown</h3>
+                    <div class="budget-breakdown text-xs">
+                        <p class="text-zinc-600 dark:text-zinc-400">🏨 Hotel <span id="hotelCost" class="text-zinc-900 dark:text-white">₹0</span></p>
+                        <p class="text-zinc-600 dark:text-zinc-400">⛽ Fuel <span id="fuelCost" class="text-zinc-900 dark:text-white">₹0</span></p>
+                        <p class="text-zinc-600 dark:text-zinc-400">🍽 Food <span id="foodCost" class="text-zinc-900 dark:text-white">₹0</span></p>
+                        <p class="text-zinc-600 dark:text-zinc-400">🛍 Shopping <span id="shoppingCost" class="text-zinc-900 dark:text-white">₹0</span></p>
+                        <p class="text-zinc-600 dark:text-zinc-400">📦 Miscellaneous <span id="miscCost" class="text-zinc-900 dark:text-white">₹0</span></p>
+                        <hr class="my-2 border-zinc-200 dark:border-zinc-800">
+                        <h2 class="text-sm font-black text-emerald-500">Total <span id="totalBudget">₹0</span></h2>
+                    </div>
+                </div>
+
+                <!-- 3. Efficiency & Fuel Card -->
+                <div class="p-3 bg-white dark:bg-[#141414] rounded-xl border border-zinc-200/60 dark:border-zinc-800 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 tracking-wider uppercase mb-1">🤖 Efficiency & Fuel</span>
+                        <span id="estimatedMileage" class="text-base font-extrabold text-zinc-800 dark:text-white block">0.0 km/L</span>
+                    </div>
+                    <span id="fuelRequired" class="text-[11px] font-semibold text-zinc-400 mt-1">Fuel Needed: 0 L</span>
+                </div>
+                
+                <!-- 4. Crowd Prediction Card -->
+                <div class="p-3 bg-white dark:bg-[#141414] rounded-xl border border-zinc-200/60 dark:border-zinc-800 flex flex-col justify-between prediction-card">
+                    <div>
+                        <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 tracking-wider uppercase mb-1">🤖 Crowd Prediction</span>
+                        <div class="flex items-baseline gap-2">
+                            <span id="crowdLevel" class="text-base font-extrabold text-zinc-800 dark:text-white">--</span>
+                        </div>
+                    </div>
+                    <span id="expectedVisitors" class="text-[11px] font-semibold text-zinc-400 mt-1">Expected Visitors: --</span>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-[11px] text-zinc-400 dark:text-zinc-500">Review your generated target outputs above. Press save to persist the itinerary instance configuration database record.</p>
+                <button type="button" onclick="applyItineraryCustomizations()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-6 py-3 rounded-xl transition shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-square-check"></i> Commit Itinerary & Initialize Trip 
+                </button>
+            </div>
+        </div>
+
+        <!-- EXPENSE LOGGING & GRAPHING INTERACTIVE ROWS -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- LOG EXPENSE FORM -->
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-3xl shadow-sm lg:col-span-1">
+                <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-4 uppercase tracking-wide flex items-center"><i class="fa-solid fa-receipt text-purple-500 mr-2"></i> Step 2: Log Expense</h3>
+                <form id="addExpenseForm" class="space-y-4" onsubmit="handleFormSubmission(event)">
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Amount (INR)</label>
+                        <input type="number" id="expAmount" min="1" placeholder="e.g., ₹3000" required class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Category</label>
+                        <select id="expCategory" required class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition font-medium">
+                            <option value="Fuel">Fuel</option>
+                            <option value="Food">Food</option>
+                            <option value="Hotel">Hotel</option>
+                            <option value="Toll">Toll</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Activities">Activities</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Description</label>
+                        <input type="text" id="expDesc" placeholder="e.g., Highway Lunch Stop" required class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Date</label>
+                        <input type="date" id="expDate" required class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition [color-scheme:light] dark:[color-scheme:dark]">
+                    </div>
+                    
+                    <!-- DYNAMIC CONDITIONAL SPLIT TOGGLE FIELD -->
+                    <div class="pt-2">
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Do you want to split this bill?</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                                <input type="radio" name="wantsSplit" value="yes" onchange="toggleSplitSection(true)" class="w-4 h-4 accent-purple-600"> Yes
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                                <input type="radio" name="wantsSplit" value="no" checked onchange="toggleSplitSection(false)" class="w-4 h-4 accent-purple-600"> No
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm py-3 rounded-xl transition shadow-md shadow-purple-600/20 mt-2">
+                        Post Expense Log
+                    </button>
+                </form>
+            </div>
+
+            <!-- DYNAMIC GRAPHING RENDER AREA -->
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-3xl shadow-sm lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 relative">
+                <div id="chartsStateLockscreen" class="absolute inset-0 bg-white/90 dark:bg-[#141414]/95 backdrop-blur-sm z-30 rounded-3xl flex flex-col items-center justify-center p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3 text-lg"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h4 class="text-sm font-bold text-zinc-900 dark:text-white mb-1">Charts Awaiting Setup</h4>
+                    <p class="text-xs text-zinc-400 max-w-xs mb-4">Click "Save Setup & Generate Charts" above after validating your configurations to display data metrics.</p>
+                </div>
+
+                <div class="flex flex-col items-center justify-center p-2 bg-zinc-50 dark:bg-[#0d0d0d]/40 rounded-2xl border border-zinc-100 dark:border-zinc-800/40">
+                    <span class="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">Category Allocation (Pie)</span>
+                    <div class="relative w-full max-w-[200px]"><canvas id="pieChartCanvas"></canvas></div>
+                </div>
+                <div class="flex flex-col items-center justify-center p-2 bg-zinc-50 dark:bg-[#0d0d0d]/40 rounded-2xl border border-zinc-100 dark:border-zinc-800/40">
+                    <span class="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">Daily Burn Trends (Bar)</span>
+                    <div class="relative w-full h-[210px]"><canvas id="barChartCanvas"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONDITIONAL EVEN SPLIT EXPENSE DRAWER SECTION -->
+        <div id="splitModuleSection" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-3xl shadow-sm lg:col-span-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-4 uppercase tracking-wide flex items-center"><i class="fa-solid fa-people-arrows text-purple-500 mr-2"></i> Step 3: Split Calculator</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Current Bill Amount (INR)</label>
+                            <input type="number" id="splitAmountInput" placeholder="₹ Value to divide" class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">How many people to split with?</label>
+                            <input type="number" id="splitPeopleCount" min="1" value="3" class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-2.5 text-sm font-semibold text-zinc-900 dark:text-white focus:outline-none focus:border-purple-500 transition">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="calculateGroupSplit()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm py-3 rounded-xl transition shadow-md shadow-indigo-600/20 mt-4">
+                    Compute Split Shares
+                </button>
+            </div>
+
+            <!-- INDIVIDUAL SPLIT RESULT SHARING INTERFACE MATRIX -->
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 p-6 rounded-3xl shadow-sm lg:col-span-2 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-base font-bold text-zinc-900 dark:text-white mb-4 uppercase tracking-wide flex items-center"><i class="fa-solid fa-calculator text-purple-500 mr-2"></i> Individual Shares Breakdown</h3>
+                    <div id="splitResultsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold text-zinc-500 dark:text-zinc-400">
+                        <div class="p-4 bg-zinc-50 dark:bg-[#0d0d0d]/40 border border-zinc-100 dark:border-zinc-800/60 rounded-xl flex items-center justify-center text-center py-8 col-span-full">
+                            Input the specific target split count criteria details above to evaluate division parameters.
+                        </div>
+                    </div>
+                </div>
+                <p class="text-[11px] text-zinc-400 dark:text-zinc-500 italic mt-4">Calculates total cost distributions evenly across the specific subgroup selection matrix entered.</p>
+            </div>
+        </div>
+
+        <!-- Expense Ledger History Dynamic Table -->
+        <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 rounded-3xl p-6 shadow-sm mb-24">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-zinc-900 dark:text-white flex items-center"><i class="fa-solid fa-history text-purple-500 mr-2"></i> Expense History Table</h3>
+                <button type="button" onclick="fetchExternalDataFromServer()" class="text-xs font-bold border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-900 px-3 py-1.5 rounded-lg hover:bg-zinc-100 transition"><i class="fa-solid fa-rotate mr-1"></i> Refresh API Connection</button>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-zinc-100 dark:border-zinc-800/60 text-xs font-bold uppercase tracking-wider text-zinc-400">
+                            <th class="py-3 px-4">Date</th>
+                            <th class="py-3 px-4">Description</th>
+                            <th class="py-3 px-4">Category</th>
+                            <th class="py-3 px-4 text-right">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionLedgerBody" class="text-sm font-medium text-zinc-700 dark:text-zinc-300"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. POPULAR THINGS TO DO -->
+    <section id="popular" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="flex justify-between items-end mb-10">
+            <h2 class="text-3xl font-extrabold text-zinc-900 dark:text-white">Popular things to do</h2>
+            <button type="button" class="text-sm font-bold bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:border-zinc-700 px-5 py-2.5 rounded-xl text-zinc-700 dark:text-zinc-300 transition">See all</button>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Heritage">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Heritage Walks</h3>
+                    <p class="text-xs text-purple-400 dark:text-zinc-400 font-medium">120+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Spiritual">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Spiritual Trails</h3>
+                    <p class="text-xs text-purple-400 dark:text-zinc-400 font-medium">80+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Cruises">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-955/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Backwater Cruises</h3>
+                    <p class="text-xs text-purple-400 dark:text-zinc-400 font-medium">95+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Safaris">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Desert Safaris</h3>
+                    <p class="text-xs text-purple-400 dark:text-zinc-400 font-medium">60+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1486916856992-e4db22c8df33?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Treks">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Himalayan Treks</h3>
+                    <p class="text-xs text-purple-400 dark:text-zinc-400 font-medium">140+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Food">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Street Food Tours</h3>
+                    <p class="text-xs text-purple-400 dark:text-zinc-400 font-medium">250+ Tours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FEATURED TRIPS -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+                <h2 class="text-3xl font-extrabold text-zinc-900 dark:text-white mb-2">Featured Trips</h2>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400">Explore our handpicked selection of exceptional vivid Indian getaways.</p>
+            </div>
+            <button type="button" class="text-sm font-bold bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:border-zinc-700 px-5 py-2.5 rounded-xl text-zinc-700 dark:text-zinc-300 transition">View All Trips</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 rounded-3xl overflow-hidden p-4 flex flex-col shadow-sm hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover rounded-2xl mb-4" alt="Jaipur">
+                <h3 class="text-xl font-extrabold text-zinc-900 dark:text-white mb-1">Jaipur, Rajasthan</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-6 flex-grow">Royal Heritage Tour – Private Guided Palace & Fort Expedition with Traditional Rajasthani Lunch</p>
+                <div class="flex items-center justify-between pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                    <div>
+                        <span class="text-xs text-zinc-400 dark:text-zinc-500 block font-medium">From</span>
+                        <span class="text-xl font-extrabold text-purple-600 dark:text-white">₹15,499</span>
+                    </div>
+                    <button type="button" class="bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold px-4 py-3 rounded-xl transition">View Details</button>
+                </div>
+                <div class="mt-3 flex items-center text-xs text-zinc-500 dark:text-zinc-400 gap-1"><i class="fa-solid fa-star text-amber-500"></i> <span class="text-zinc-800 dark:text-white font-bold">4.9</span> (412 reviews)</div>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 rounded-3xl overflow-hidden p-4 flex flex-col shadow-sm hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover rounded-2xl mb-4" alt="Munnar">
+                <h3 class="text-xl font-extrabold text-zinc-900 dark:text-white mb-1">Munnar, Kerala</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-6 flex-grow">Misty Hills & Tea Plantations – Nature Trekking, Spice Garden Strolls, and Backwater Houseboat Stay</p>
+                <div class="flex items-center justify-between pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                    <div>
+                        <span class="text-xs text-zinc-400 dark:text-zinc-500 block font-medium">From</span>
+                        <span class="text-xl font-extrabold text-purple-600 dark:text-white">₹18,500</span>
+                    </div>
+                    <button type="button" class="bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold px-4 py-3 rounded-xl transition">View Details</button>
+                </div>
+                <div class="mt-3 flex items-center text-xs text-zinc-500 dark:text-zinc-400 gap-1"><i class="fa-solid fa-star text-amber-500"></i> <span class="text-zinc-800 dark:text-white font-bold">4.8</span> (295 reviews)</div>
+            </div>
+            <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 rounded-3xl overflow-hidden p-4 flex flex-col shadow-sm hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover rounded-2xl mb-4" alt="Ladakh">
+                <h3 class="text-xl font-extrabold text-zinc-900 dark:text-white mb-1">Leh Ladakh</h3>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-6 flex-grow">High Mountain Passes – Pangong Lake Exploration, Nubra Valley ATV Rides & Monastery Tours</p>
+                <div class="flex items-center justify-between pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                    <div>
+                        <span class="text-xs text-zinc-400 dark:text-zinc-500 block font-medium">From</span>
+                        <span class="text-xl font-extrabold text-purple-600 dark:text-white">₹32,999</span>
+                    </div>
+                    <button type="button" class="bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold px-4 py-3 rounded-xl transition">View Details</button>
+                </div>
+                <div class="mt-3 flex items-center text-xs text-zinc-500 dark:text-zinc-400 gap-1"><i class="fa-solid fa-star text-amber-500"></i> <span class="text-zinc-800 dark:text-white font-bold">4.95</span> (520 reviews)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. WRITE A REVIEW SECTION -->
+    <section id="reviews" class="max-w-3xl mx-auto px-6 pb-24">
+        <div class="mb-10 text-center">
+            <h2 class="text-3xl font-extrabold text-zinc-900 dark:text-white mb-2">Share Your Experience</h2>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">Leave a review of your recent Indian getaway to help fellow adventurers choose their next destination.</p>
+        </div>
+
+        <div class="bg-white dark:bg-[#141414] border border-zinc-200 dark:border-zinc-800/80 rounded-3xl p-6 md:p-8 shadow-xl">
+            <form id="reviewForm" onsubmit="event.preventDefault(); alert('Review submitted!'); this.reset(); resetStars();">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">Select Tour Destination</label>
+                        <select class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-800 dark:text-white focus:outline-none focus:border-purple-500 transition font-medium">
+                            <option value="jaipur">Jaipur, Rajasthan</option>
+                            <option value="munnar">Munnar, Kerala</option>
+                            <option value="ladakh">Leh Ladakh</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">Your Rating</label>
+                        <input type="hidden" id="ratingValue" name="rating" value="5">
+                        <div class="flex items-center space-x-2 h-11 bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4" id="starContainer">
+                            <button type="button" data-value="1" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                            <button type="button" data-value="2" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                            <button type="button" data-value="3" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                            <button type="button" data-value="4" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                            <button type="button" data-value="5" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">Review Title</label>
+                    <input type="text" placeholder="e.g., Incredible heritage walk!" required class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-800 dark:text-white focus:outline-none focus:border-purple-500 transition placeholder-zinc-400 dark:placeholder-zinc-700">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">Detailed Review</label>
+                    <textarea rows="4" placeholder="Write about hospitality, itinerary, comfort..." required class="w-full bg-zinc-50 dark:bg-[#0d0d0d] border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-800 dark:text-white focus:outline-none focus:border-purple-500 transition resize-none placeholder-zinc-400 dark:placeholder-zinc-700"></textarea>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                    <p class="text-[11px] text-zinc-400 dark:text-zinc-500">Your review will be checked and posted publicly.</p>
+                    <button type="submit" class="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm px-8 py-3.5 rounded-xl transition shadow-md shadow-purple-600/20">
+                        Submit Review
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 8. CTA BANNER -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-500 dark:from-zinc-900 dark:to-black border border-transparent dark:border-zinc-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden shadow-xl">
+            <div class="max-w-xl z-10 text-white">
+                <h2 class="text-2xl md:text-4xl font-extrabold mb-3 tracking-tight">Start Your Real Around The World Journey Today</h2>
+                <p class="text-xs text-indigo-100 dark:text-zinc-400 opacity-90 leading-relaxed">Your dream place is just a click away. TripWise is here to assist you every step of the way.</p>
+            </div>
+            <button type="button" class="w-full md:w-auto bg-white dark:bg-purple-600 dark:hover:bg-purple-700 text-purple-600 dark:text-white font-extrabold text-sm px-8 py-4 rounded-xl transition shadow-lg whitespace-nowrap z-10 border-0">
+                Explore Places
+            </button>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-zinc-100 dark:bg-black border-t border-zinc-200 dark:border-zinc-900 text-zinc-600 dark:text-zinc-400 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 pt-8 text-center border-t border-zinc-200 dark:border-zinc-900/60">
+            <p class="text-[11px] text-zinc-400 dark:text-zinc-500">&copy; @2026Tripsy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- LIVE DATABASE CONNECTIONS & ANALYTICS SCRIPT ENGINE -->
+    <script>
+        const API_BASE_URL = "http://127.0.0.1:8000/api";
+        let currentTripId = localStorage.getItem("trip_id") || null;
+
+        // Dataset Vehicle Brand to Model Mapping
+        const vehicleDataMap = {
+            "Honda": ["Amaze", "City", "Elevate"],
+            "Hyundai": ["Creta", "Exter", "Venue", "Verna", "i20"],
+            "Kia": ["Carens", "Seltos", "Sonet"],
+            "MG": ["Astor", "Comet EV", "Hector", "Windsor EV"],
+            "Mahindra": ["Bolero", "Scorpio-N", "Thar", "XUV700"],
+            "Maruti Suzuki": ["Baleno", "Brezza", "Fronx", "Swift", "WagonR"],
+            "Tata": ["Altroz", "Harrier", "Nexon", "Punch", "Tiago"],
+            "Toyota": ["Fortuner", "Glanza", "Innova Hycross"]
+        };
+
+        // Cascading Model Dropdown Function
+        function updateModelOptions() {
+            const brandSelect = document.getElementById("brand");
+            const modelSelect = document.getElementById("model");
+            const selectedBrand = brandSelect.value;
+
+            modelSelect.innerHTML = '<option value="">Model</option>';
+
+            if (selectedBrand && vehicleDataMap[selectedBrand]) {
+                vehicleDataMap[selectedBrand].forEach(modelName => {
+                    const opt = document.createElement("option");
+                    opt.value = modelName;
+                    opt.textContent = modelName;
+                    modelSelect.appendChild(opt);
+                });
+            }
+        }
+
+        // Global State Variables
+        let totalTripBudget = 150000;
+        let activeTravelersCount = 4;
+        let activeTripDuration = 7;
+        let activeExpenses = [];
+
+        let allocatedPieChartInstance = null;
+        let allocatedBarChartInstance = null;
+        let chartsHaveBeenInitialized = false; 
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const themeToggleBtn = document.getElementById("themeToggleBtn");
+            const iconContainer = document.getElementById("iconContainer");
+            const htmlElement = document.documentElement;
+            const heroBg = document.getElementById("heroBg");
+
+            function adjustHeroGradient(isDark) {
+                if (isDark) {
+                    heroBg.style.backgroundImage =
+                        "linear-gradient(to bottom, rgba(13,13,13,0.3), #0d0d0d), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80')";
+                } else {
+                    heroBg.style.backgroundImage =
+                        "linear-gradient(to bottom, rgba(255,255,255,0.1), #f7f9fc), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80')";
+                }
+            }
+
+            function updateToggleIcon(isDark) {
+                iconContainer.innerHTML = isDark
+                    ? `<i class="fa-solid fa-sun text-base text-amber-400"></i>`
+                    : `<i class="fa-solid fa-moon text-base text-zinc-700"></i>`;
+            }
+
+            // Initial theme
+            const isDark = htmlElement.classList.contains("dark");
+            updateToggleIcon(isDark);
+            adjustHeroGradient(isDark);
+
+            // Theme toggle
+            themeToggleBtn.addEventListener("click", () => {
+                htmlElement.classList.toggle("dark");
+
+                const dark = htmlElement.classList.contains("dark");
+
+                updateToggleIcon(dark);
+                adjustHeroGradient(dark);
+
+                localStorage.setItem("theme", dark ? "dark" : "light");
+            });
+
+            // Restore saved theme
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                if (savedTheme === "dark") {
+                    htmlElement.classList.add("dark");
+                } else {
+                    htmlElement.classList.remove("dark");
+                }
+
+                updateToggleIcon(savedTheme === "dark");
+                adjustHeroGradient(savedTheme === "dark");
+            }
+
+            // Set today's date
+            const expDateInput = document.getElementById("expDate");
+            if (expDateInput) {
+                expDateInput.value = new Date().toISOString().split("T")[0];
+            }
+
+            // Load trip if one exists
+            if (currentTripId) {
+                loadDataFromDatabase();
+            }
+
+        });
+
+        // Hero Section Navigation Trigger Helpers
+        function focusAddTrip() {
+            const input = document.getElementById("tripDestination");
+            if (input) {
+                input.focus();
+            }
+        }
+
+        function focusSelectTrip() {
+            const dropdown = document.getElementById("tripSelectDropdown");
+            if (dropdown) {
+                dropdown.focus();
+            }
+        }
+
+    async function loadDataFromDatabase() {
+    if (!currentTripId) {
+        currentTripId = localStorage.getItem("trip_id");
+    }
+
+    if (!currentTripId) {
+        console.warn("No trip selected.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/dashboard/${currentTripId}`);
+        if (!response.ok) throw new Error("Failed to load dashboard data.");
+
+        const data = await response.json();
+        console.log("Backend dashboard response:", data);
+
+        // Update indicator to connected
+        const statusText = document.getElementById("apiStatusText");
+        const statusDot = document.getElementById("apiStatusIndicator");
+        if (statusText) statusText.innerText = "Database Connected";
+        if (statusDot) {
+            statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500";
+        }
+
+        // Set budget & trip metadata
+        totalTripBudget = Number(data.total_budget || data.budget) || 0;
+        activeTravelersCount = data.trip_details?.travellers || data.trip_details?.travelers || 4;
+        activeTripDuration = data.trip_details?.days || 7;
+
+        // Normalize expense objects to handle naming differences from the backend
+        const rawExpenses = data.expenses || data.expense_list || [];
+        activeExpenses = rawExpenses.map(item => ({
+            id: item.id || item.expense_id || Math.random(),
+            amount: Number(item.amount || item.cost || item.price || 0),
+            category: (item.category || item.category_name || "Miscellaneous").trim(),
+            note: item.note || item.description || item.expDesc || "No description",
+            date: item.date || item.expense_date || new Date().toISOString().split("T")[0]
+        }));
+
+        // Unlock chart screen
+        const lockscreen = document.getElementById("chartsStateLockscreen");
+        if (lockscreen) lockscreen.classList.add("hidden");
+        chartsHaveBeenInitialized = true;
+
+        // Trigger math and chart rebuilds
+        recomputeAnalyticsLedgerEngine();
+    } catch (err) {
+        console.error("Dashboard Sync Error:", err);
+        const statusText = document.getElementById("apiStatusText");
+        const statusDot = document.getElementById("apiStatusIndicator");
+        if (statusText) statusText.innerText = "Connection Failed";
+        if (statusDot) statusDot.className = "w-2.5 h-2.5 rounded-full bg-rose-500";
+    }
+}
+
+        // --- PREDICTIVE ML CALLS ---
+        async function predictBudget() {
+            const payload = {
+                source: document.getElementById("tripSource").value || "Bangalore",
+                destination: document.getElementById("tripDestination").value,
+                distance_km: parseFloat(document.getElementById("tripDistance") ? document.getElementById("tripDistance").value : 0) || 0,
+                travelers: parseInt(document.getElementById("configTravelersVal").innerText),
+                days: parseInt(document.getElementById("tripDays").value),
+                vehicle_type: document.getElementById("vehicleType").value
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/predict-budget`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                await response.json();
+            } catch (err) {
+                console.error("Budget prediction failure:", err);
+            }
+        }
+
+        async function predictMileage() {
+            const payload = {
+                Brand: document.getElementById("brand").value,
+                Model: document.getElementById("model").value,
+                Vehicle_Year: parseInt(document.getElementById("vehicleYear").value),
+                Vehicle_Type: document.getElementById("vehicleType").value,
+                Fuel_Type: document.getElementById("fuelType").value,
+                Transmission: document.getElementById("transmission").value,
+                Seating_Capacity: parseInt(document.getElementById("seatingCapacity").value),
+                Odometer_km: parseFloat(document.getElementById("odometer").value),
+                Vehicle_Condition: document.getElementById("vehicleCondition").value
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/predict-mileage`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                const mileage = data.estimated_mileage || 0;
+
+                document.getElementById("estimatedMileage").innerText = mileage + " km/L";
+
+                const distanceElem = document.getElementById("tripDistance");
+                const distance = distanceElem ? parseFloat(distanceElem.value) : 0;
+                if (!isNaN(distance) && mileage > 0 && distance > 0) {
+                    const fuelNeeded = distance / mileage;
+                    document.getElementById("fuelRequired").innerText = `Fuel Needed: ${fuelNeeded.toFixed(2)} Liters`;
+                } else {
+                    document.getElementById("fuelRequired").innerText = "Fuel Needed: 0 L (Provide distance)";
+                }
+            } catch (err) {
+                console.error("Mileage prediction failure:", err);
+            }
+        }
+
+        async function predictBestMonth() {
+            const payload = {
+                destination: document.getElementById("tripDestination").value,
+                budget: "Medium",
+                trip_type: document.getElementById("tripType").value,
+                preferred_weather: document.getElementById("weather").value,
+                days: parseInt(document.getElementById("tripDays").value),
+                season: "Winter",
+                estimated_cost_inr: parseFloat(document.getElementById("inputBudgetConfig").value) || 50000,
+                crowd_level: "Medium",
+                hotel_price_level: "Standard"
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/predict-best-month`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                document.getElementById("recommendedMonth").innerText = data.recommended_month || "Unknown";
+            } catch (err) {
+                console.error("Month prediction failure:", err);
+                document.getElementById("recommendedMonth").innerText = "Error resolving calendar";
+            }
+        }
+
+        async function predictCrowd() {
+            try {
+                const response = await fetch(
+                    API_BASE_URL + "/predict-crowd",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            Destination: document.getElementById("tripDestination").value,
+                            Month: document.getElementById("travelMonth").value,
+                            Festival_Season: document.getElementById("festivalSeason").value,
+                            Weekend: document.getElementById("weekend").value,
+                            School_Holiday: document.getElementById("schoolHoliday").value,
+                            Weather: document.getElementById("weather").value
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                document.getElementById("crowdLevel").innerText = data.crowd_level || "--";
+                document.getElementById("expectedVisitors").innerText = "Expected Visitors: " + (data.expected_visitors || "--");
+            } catch (err) {
+                console.error("Crowd prediction failure:", err);
+            }
+        }
+
+        // NEW PREDICT BUDGET BREAKDOWN FUNCTION
+        async function predictBudgetBreakdown() {
+            try {
+                const response = await fetch(
+                    API_BASE_URL + "/predict-budget-breakdown",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            Destination: document.getElementById("tripDestination").value,
+                            Days: parseInt(document.getElementById("tripDays").value),
+                            Travellers: parseInt(document.getElementById("travellers").value),
+                            Trip_Type: document.getElementById("tripType").value,
+                            Vehicle_Type: document.getElementById("vehicleType").value,
+                            Budget_Level: document.getElementById("budgetCategory").value,
+                            Month: document.getElementById("travelMonth").value
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                document.getElementById("hotelCost").innerText = "₹" + (data.hotel_cost || 0).toLocaleString('en-IN');
+                document.getElementById("fuelCost").innerText = "₹" + (data.fuel_cost || 0).toLocaleString('en-IN');
+                document.getElementById("foodCost").innerText = "₹" + (data.food_cost || 0).toLocaleString('en-IN');
+                document.getElementById("shoppingCost").innerText = "₹" + (data.shopping_cost || 0).toLocaleString('en-IN');
+                document.getElementById("miscCost").innerText = "₹" + (data.misc_cost || 0).toLocaleString('en-IN');
+                document.getElementById("totalBudget").innerText = "₹" + (data.total_budget || 0).toLocaleString('en-IN');
+            } catch (err) {
+                console.error("Budget breakdown prediction failure:", err);
+            }
+        }
+
+        // Master trigger wrapper
+        async function runAIModels() {
+            if(!document.getElementById("tripDestination").value) {
+                alert("Please specify a Target Destination to calculate predictions.");
+                return;
+            }
+            // Execution pipeline
+            await predictBudget();
+            await predictMileage();
+            await predictBestMonth();
+            await predictCrowd();
+            await predictBudgetBreakdown();
+        }
+
+        // Fetch saved trip matrices on initial script loading
+        async function populateTripDropdownMenu() {
+            const dropdown = document.getElementById("tripSelectDropdown");
+            if (!dropdown) return;
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/trips`);
+                if (!response.ok) throw new Error("Failed to pull older trips from server.");
+                
+                const trips = await response.json();
+                
+                dropdown.innerHTML = '<option value="">-- Load an Older Trip --</option>';
+                
+                trips.forEach(trip => {
+                    const option = document.createElement("option");
+                    option.value = trip.trip_id;
+                    option.text = `To: ${trip.destination} (₹${trip.budget.toLocaleString('en-IN')})`;
+                    dropdown.appendChild(option);
+                });
+
+                if (currentTripId) {
+                    dropdown.value = currentTripId;
+                }
+            } catch (err) {
+                console.error("Error populating older trips:", err);
+            }
+        }
+
+        // Automatically update form fields when an older trip is chosen
+        async function handleTripSelectionChange() {
+            const dropdown = document.getElementById("tripSelectDropdown");
+            const selectedTripId = dropdown.value;
+            
+            if (!selectedTripId) return;
+
+            currentTripId = selectedTripId;
+            localStorage.setItem("trip_id", currentTripId);
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/dashboard/${currentTripId}`);
+                const data = await response.json();
+                
+                document.getElementById("tripSource").value = data.trip_details.source;
+                document.getElementById("tripDestination").value = data.trip_details.destination;
+                document.getElementById("tripDays").value = data.trip_details.days;
+                document.getElementById("inputDurationConfig").value = data.trip_details.days;
+                document.getElementById("inputBudgetConfig").value = data.trip_details.budget;
+                document.getElementById("configTravelersVal").innerText = data.trip_details.travellers;
+                document.getElementById("travellers").value = data.trip_details.travellers;
+                document.getElementById("vehicleType").value = data.trip_details.vehicle;
+
+                if (data.trip_details.brand) {
+                    document.getElementById("brand").value = data.trip_details.brand;
+                    updateModelOptions();
+                }
+                if (data.trip_details.model) {
+                    document.getElementById("model").value = data.trip_details.model;
+                }
+
+                await loadDataFromDatabase();
+            } catch (err) {
+                console.error("Error syncing older trip context parameters:", err);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            populateTripDropdownMenu(); 
+        });
+
+        // Ensure database entry reflects updated layout fields
+        async function applyItineraryCustomizations() {
+            const payload = {
+                source: document.getElementById("tripSource").value || "Bangalore",
+                destination: document.getElementById("tripDestination").value,
+                days: parseInt(document.getElementById("tripDays").value),
+                budget: parseFloat(document.getElementById("inputBudgetConfig").value),
+                travellers: parseInt(document.getElementById("configTravelersVal").innerText),
+                vehicle: document.getElementById("vehicleType").value,
+                brand: document.getElementById("brand").value,
+                model: document.getElementById("model").value
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/trips`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) throw new Error("Failed to configure trip database model schema.");
+                const data = await response.json();
+                currentTripId = data.trip_id;
+                localStorage.setItem("trip_id", currentTripId);
+                await loadDataFromDatabase();
+                alert("Trip Successfully Saved to Database!");
+            } catch (err) {
+                console.error(err);
+                alert("Database connection sync dropped.");
+            }
+        }
+
+async function handleFormSubmission(event) {
+    event.preventDefault();
+
+    // 1. Validate that a trip is actively loaded
+    if (!currentTripId) {
+        alert("Please select or configure a trip context in Step 1 before posting expenses.");
+        return;
+    }
+
+    const parsedTripId = parseInt(currentTripId);
+    const parsedAmount = parseFloat(document.getElementById("expAmount").value);
+
+    // 2. Safeguard Guardrails
+    if (isNaN(parsedTripId) || parsedTripId <= 0) {
+        alert("Invalid Active Trip Context. Please reload your trip from the dropdown.");
+        return;
+    }
+    if (isNaN(parsedAmount) || parsedAmount <= 0) {
+        alert("Please enter a valid expense amount greater than 0.");
+        return;
+    }
+
+    const category = document.getElementById("expCategory").value;
+    const date = document.getElementById("expDate").value;
+    const note = document.getElementById("expDesc").value || "No notes provided";
+
+    const payload = {
+        trip_id: parsedTripId,
+        category: category,
+        amount: parsedAmount,
+        date: date,
+        note: note
+    };
+
+    try {
+        console.log("Posting expense item to database...", payload);
+        const response = await fetch(`${API_BASE_URL}/expenses`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            alert("Expense logged successfully!");
+            document.getElementById("addExpenseForm").reset();
+
+            // Re-default the calendar selection to today
+            if (document.getElementById("expDate")) {
+                document.getElementById("expDate").value = new Date().toISOString().split("T")[0];
+            }
+
+            // --- IMMEDIATE UI UPDATE ---
+            // Add the new item to activeExpenses directly
+            activeExpenses.push({
+                amount: parsedAmount,
+                category: category,
+                date: date,
+                note: note
+            });
+
+            // Unlock chart container if locked
+            const lockscreen = document.getElementById("chartsStateLockscreen");
+            if (lockscreen) {
+                lockscreen.classList.add("hidden");
+            }
+            chartsHaveBeenInitialized = true;
+
+            // Recompute stats and redraw charts instantly
+            recomputeAnalyticsLedgerEngine();
+
+            // Background-sync with MySQL
+            await loadDataFromDatabase();
+        } else {
+            const errData = await response.json();
+            console.error("Server validation dropped your payload:", errData);
+            alert("Failed to save expense: " + JSON.stringify(errData.detail || errData));
+        }
+    } catch (err) {
+        console.error("Communication error during expense submission:", err);
+        alert("Could not connect to the backend server.");
+    }
+}
+        // --- SPLIT CALCULATION MANAGEMENT SYSTEM ENGINE (EVEN COST PER INDIVIDUAL SPLIT) ---
+        function calculateGroupSplit() {
+            const splitAmt = parseFloat(document.getElementById('splitAmountInput').value);
+            const numPeople = parseInt(document.getElementById('splitPeopleCount').value);
+            const resultsBox = document.getElementById('splitResultsContainer');
+
+            if(!splitAmt || splitAmt <= 0) {
+                alert("Please enter a valid bill amount to divide.");
+                return;
+            }
+            if(!numPeople || numPeople <= 0) {
+                alert("Please enter a valid number of people to divide the cost with.");
+                return;
+            }
+
+            resultsBox.innerHTML = "";
+            
+            const perPersonShare = (splitAmt / numPeople).toFixed(2);
+
+            for (let i = 1; i <= numPeople; i++) {
+                const gridCard = document.createElement('div');
+                gridCard.className = "p-3 bg-zinc-50 dark:bg-[#0d0d0d]/40 border border-zinc-100 dark:border-zinc-800/60 rounded-xl flex justify-between items-center";
+                gridCard.innerHTML = `
+                    <span class="text-zinc-700 dark:text-zinc-400 font-bold">Person ${i}</span>
+                    <span class="text-purple-600 dark:text-purple-400 font-extrabold">Has to pay: ₹${parseFloat(perPersonShare).toLocaleString('en-IN')}</span>
+                `;
+                resultsBox.appendChild(gridCard);
+            }
+        }
+
+        function fetchExternalDataFromServer() {
+            loadDataFromDatabase();
+        }
+
+        // --- DASHBOARD MATH AND CHART REBUILD ENGINES ---
+        function adjustTravelersCount(amount) {
+            let currentNum = parseInt(document.getElementById('configTravelersVal').innerText);
+            currentNum += amount;
+            if (currentNum < 1) currentNum = 1; 
+            document.getElementById('configTravelersVal').innerText = currentNum;
+            document.getElementById('travellers').value = currentNum;
+        }
+
+        const expAmtInput = document.getElementById('expAmount');
+        if (expAmtInput) {
+            expAmtInput.addEventListener('input', (e) => {
+                const splitInput = document.getElementById('splitAmountInput');
+                const checkedSplit = document.querySelector('input[name="wantsSplit"]:checked');
+                if(splitInput && checkedSplit && checkedSplit.value === "yes") {
+                    splitInput.value = e.target.value;
+                }
+            });
+        }
+
+        function recomputeAnalyticsLedgerEngine() {
+            const combinedExpenses = activeExpenses.reduce((sum, item) => sum + item.amount, 0);
+            const netRemainingBudget = totalTripBudget - combinedExpenses;
+            const thresholdPercentage = totalTripBudget > 0 ? ((combinedExpenses / totalTripBudget) * 100).toFixed(1) : 0;
+
+            document.getElementById('lblTotalBudget').innerText = `₹${totalTripBudget.toLocaleString('en-IN')}`;
+            document.getElementById('lblTotalExpenses').innerText = `₹${combinedExpenses.toLocaleString('en-IN')}`;
+            document.getElementById('lblRemainingBudget').innerText = `₹${netRemainingBudget.toLocaleString('en-IN')}`;
+            document.getElementById('lblTravelersCount').innerText = `${activeTravelersCount} Members`;
+            document.getElementById('lblTripDuration').innerText = `${activeTripDuration} Days`;
+            document.getElementById('lblProgressPercentage').innerText = `${thresholdPercentage}% Used`;
+            
+            const pBar = document.getElementById('utilizationProgressBar');
+            if (pBar) {
+                pBar.style.width = `${Math.min(thresholdPercentage, 100)}%`;
+                pBar.className = thresholdPercentage > 85 ? "bg-rose-500 h-full rounded-full" : thresholdPercentage > 60 ? "bg-amber-500 h-full rounded-full" : "bg-gradient-to-r from-purple-500 via-indigo-500 to-rose-500 h-full rounded-full";
+            }
+
+            renderLedgerTableUI();
+            if(chartsHaveBeenInitialized) rebuildVisualizerCharts();
+        }
+
+        function renderLedgerTableUI() {
+            const tableBody = document.getElementById('transactionLedgerBody');
+            if (!tableBody) return;
+            tableBody.innerHTML = "";
+            const orderedLedger = [...activeExpenses].sort((a,b) => new Date(b.date) - new Date(a.date));
+
+            if(orderedLedger.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="4" class="py-4 text-center text-xs text-zinc-400">No active tracking history entries located. Log one above.</td></tr>`;
+                return;
+            }
+
+            orderedLedger.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-zinc-100 dark:border-zinc-800/40 hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors";
+                tr.innerHTML = `
+                    <td class="py-3 px-4 font-mono text-xs">${item.date}</td>
+                    <td class="py-3 px-4 font-semibold text-zinc-900 dark:text-white">${item.note}</td>
+                    <td class="py-3 px-4 text-xs"><span class="px-2 py-1 rounded-md bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 font-bold">${item.category}</span></td>
+                    <td class="py-3 px-4 text-right font-bold text-zinc-900 dark:text-white">₹${item.amount.toLocaleString('en-IN')}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+   function rebuildVisualizerCharts() {
+    const expensesArray = activeExpenses || [];
+    const isDark = document.documentElement.classList.contains('dark');
+    const fontColorConfig = isDark ? '#a1a1aa' : '#71717a';
+    const gridColorConfig = isDark ? '#27272a' : '#e4e4e7';
+
+    const categories = ["Fuel", "Food", "Hotel", "Toll", "Shopping", "Activities", "Miscellaneous"];
+
+    // Case-insensitive sum matching
+    const pieDataMap = categories.map(cat =>
+        expensesArray
+            .filter(e => e.category.toLowerCase() === cat.toLowerCase())
+            .reduce((sum, e) => sum + (Number(e.amount) || 0), 0)
+    );
+
+    const hasExpenses = pieDataMap.some(val => val > 0);
+
+    // Pie Chart Render
+    const pieCanvas = document.getElementById('pieChartCanvas');
+    if (pieCanvas) {
+        if (allocatedPieChartInstance) allocatedPieChartInstance.destroy();
+        allocatedPieChartInstance = new Chart(pieCanvas.getContext('2d'), {
+            type: 'pie',
+            data: {
+                labels: hasExpenses ? categories : ["No Data"],
+                datasets: [{
+                    data: hasExpenses ? pieDataMap : [1],
+                    backgroundColor: hasExpenses
+                        ? ['#a855f7', '#3b82f6', '#ec4899', '#f59e0b', '#10b981', '#06b6d4', '#64748b']
+                        : ['#27272a'],
+                    borderColor: isDark ? '#141414' : '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+
+    // Daily Bar Chart Render
+    const datesCollected = [...new Set(expensesArray.map(e => e.date))].sort((a, b) => new Date(a) - new Date(b));
+    const barDataValues = datesCollected.map(d =>
+        expensesArray
+            .filter(e => e.date === d)
+            .reduce((sum, e) => sum + (Number(e.amount) || 0), 0)
+    );
+
+    const barCanvas = document.getElementById('barChartCanvas');
+    if (barCanvas) {
+        if (allocatedBarChartInstance) allocatedBarChartInstance.destroy();
+        allocatedBarChartInstance = new Chart(barCanvas.getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: datesCollected.length > 0 ? datesCollected.map(d => d.substring(5)) : ["No Data"],
+                datasets: [{
+                    data: barDataValues.length > 0 ? barDataValues : [0],
+                    backgroundColor: '#8b5cf6',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { color: gridColorConfig }, ticks: { color: fontColorConfig } },
+                    y: { grid: { color: gridColorConfig }, ticks: { color: fontColorConfig }, beginAtZero: true }
+                }
+            }
+        });
+    }
+}
+f
+        function toggleSplitSection(show) {
+            const splitSection = document.getElementById('splitModuleSection');
+            if (!splitSection) return;
+            if (show) {
+                splitSection.classList.remove('hidden');
+                const logAmount = document.getElementById('expAmount').value;
+                if(logAmount) {
+                    document.getElementById('splitAmountInput').value = logAmount;
+                }
+            } else {
+                splitSection.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

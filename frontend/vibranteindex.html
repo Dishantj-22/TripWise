@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripWise - Experience Vivid Journeys</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f7f9fc;
+        }
+    </style>
+</head>
+<body class="text-zinc-800 antialiased selection:bg-indigo-600 selection:text-white">
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-200/80">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold tracking-wide text-zinc-900">Trip<span class="text-indigo-600">Wise</span></a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-zinc-600">
+                <a href="#" class="text-indigo-600 border-b-2 border-indigo-600 pb-1">Home</a>
+                <a href="#" class="hover:text-indigo-600 transition">About Us</a>
+                <a href="#" class="hover:text-indigo-600 transition">Places</a>
+                <a href="#" class="hover:text-indigo-600 transition">Services</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="auth.html?mode=login" class="text-sm font-bold text-zinc-700 hover:text-indigo-600 px-4 py-2 transition">Login</a>
+                <a href="auth.html?mode=signup" class="text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl transition shadow-md shadow-indigo-600/20">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative h-[650px] flex flex-col items-center justify-center text-center px-4 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), #f7f9fc), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');">
+        <div class="max-w-4xl z-10 w-full px-2">
+            <span class="bg-amber-500/10 text-amber-700 border border-amber-500/20 font-extrabold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 inline-block">✨ Keep Track of your trips with us!</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-zinc-900 tracking-tight leading-tight mb-8">
+                Life Is Adventure Make<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-orange-500">The Best Of It</span>
+            </h1>
+            
+            <!-- Dynamic Search Widget Box -->
+            <form id="searchTripForm" class="bg-white p-4 rounded-2xl max-w-3xl mx-auto border border-zinc-200 shadow-xl shadow-zinc-200/50 flex flex-col md:flex-row items-stretch gap-4 text-left" onsubmit="event.preventDefault(); handleSearchSubmit();">
+                <div class="flex-1 min-w-[200px] px-3 border-b md:border-b-0 md:border-r border-zinc-100 pb-3 md:pb-0 flex flex-col justify-center">
+                    <label for="searchWhere" class="block text-xs font-extrabold text-zinc-400 uppercase tracking-wider mb-1">Where</label>
+                    <input type="text" id="searchWhere" placeholder="e.g., Jaipur, Munnar, Ladakh" required class="bg-transparent text-zinc-900 text-sm font-semibold focus:outline-none w-full placeholder-zinc-400 border-0 p-0 focus:ring-0">
+                </div>
+                <div class="flex-1 min-w-[180px] px-3 border-b md:border-b-0 md:border-r border-zinc-100 pb-3 md:pb-0 flex flex-col justify-center">
+                    <label for="searchWhen" class="block text-xs font-extrabold text-zinc-400 uppercase tracking-wider mb-1">When</label>
+                    <input type="date" id="searchWhen" required class="bg-transparent text-zinc-900 text-sm font-semibold focus:outline-none w-full border-0 p-0 focus:ring-0 cursor-pointer">
+                </div>
+                <div class="flex-1 min-w-[160px] px-3 pb-3 md:pb-0 flex flex-col justify-center">
+                    <label for="searchType" class="block text-xs font-extrabold text-zinc-400 uppercase tracking-wider mb-1">Tour Type</label>
+                    <select id="searchType" class="bg-transparent text-zinc-900 text-sm font-semibold focus:outline-none w-full border-0 p-0 focus:ring-0 cursor-pointer appearance-none">
+                        <option value="all">All Tours</option>
+                        <option value="heritage">Heritage Walks</option>
+                        <option value="spiritual">Spiritual Trails</option>
+                        <option value="cruise">Backwater Cruises</option>
+                        <option value="safari">Desert Safaris</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-center">
+                    <button type="submit" class="w-full md:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm px-8 py-4 rounded-xl transition shadow-lg shadow-orange-500/30 active:scale-95 transform">
+                        Browse Trip
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 3. QUICK FEATURES GRID -->
+    <section class="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white border border-zinc-200 p-6 rounded-2xl flex items-center justify-between group hover:border-indigo-500 hover:shadow-lg transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition"><i class="fa-solid fa-hotel text-lg"></i></div>
+                    <span class="text-sm font-bold text-zinc-800">Find Your Dream Stay</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right text-zinc-400 group-hover:text-indigo-600 transition text-sm"></i>
+            </div>
+            <div class="bg-white border border-zinc-200 p-6 rounded-2xl flex items-center justify-between group hover:border-teal-500 hover:shadow-lg transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center group-hover:bg-teal-600 group-hover:text-white transition"><i class="fa-solid fa-tags text-lg"></i></div>
+                    <span class="text-sm font-bold text-zinc-800">Cheap Holiday Packages</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right text-zinc-400 group-hover:text-teal-600 transition text-sm"></i>
+            </div>
+            <div class="bg-white border border-zinc-200 p-6 rounded-2xl flex items-center justify-between group hover:border-orange-500 hover:shadow-lg transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition"><i class="fa-solid fa-passport text-lg"></i></div>
+                    <span class="text-sm font-bold text-zinc-800">Effortless Check-in</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right text-zinc-400 group-hover:text-orange-500 transition text-sm"></i>
+            </div>
+            <div class="bg-white border border-zinc-200 p-6 rounded-2xl flex items-center justify-between group hover:border-purple-500 hover:shadow-lg transition cursor-pointer">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition"><i class="fa-solid fa-compass text-lg"></i></div>
+                    <span class="text-sm font-bold text-zinc-800">Explore Places</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right text-zinc-400 group-hover:text-purple-400 transition text-sm"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. POPULAR THINGS TO DO -->
+    <section class="max-w-7xl mx-auto px-6 py-24">
+        <div class="flex justify-between items-end mb-10">
+            <h2 class="text-3xl font-extrabold text-zinc-900">Popular things to do</h2>
+            <button class="text-sm font-bold bg-white border border-zinc-200 hover:bg-zinc-50 px-5 py-2.5 rounded-xl text-zinc-700 transition">See all</button>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <!-- Items structure with high colorful density layouts -->
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Heritage">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Heritage Walks</h3>
+                    <p class="text-xs text-orange-400 font-medium">120+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Spiritual">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Spiritual Trails</h3>
+                    <p class="text-xs text-teal-400 font-medium">80+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Cruises">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Backwater Cruises</h3>
+                    <p class="text-xs text-indigo-400 font-medium">95+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Safaris">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Desert Safaris</h3>
+                    <p class="text-xs text-amber-400 font-medium">60+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1486916856992-e4db22c8df33?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Treks">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Himalayan Treks</h3>
+                    <p class="text-xs text-pink-400 font-medium">140+ Tours</p>
+                </div>
+            </div>
+            <div class="relative h-64 rounded-2xl overflow-hidden group shadow-md cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Food">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                    <h3 class="font-bold text-white">Street Food Tours</h3>
+                    <p class="text-xs text-lime-400 font-medium">250+ Tours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FEATURED TRIPS -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+                <h2 class="text-3xl font-extrabold text-zinc-900 mb-2">Featured Trips</h2>
+                <p class="text-sm text-zinc-500">Explore our handpicked selection of exceptional vivid Indian getaways.</p>
+            </div>
+            <button class="text-sm font-bold bg-white border border-zinc-200 hover:bg-zinc-50 px-5 py-2.5 rounded-xl text-zinc-700 transition">View All Trips</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Tour Card 1 -->
+            <div class="bg-white border border-zinc-200 rounded-3xl overflow-hidden p-4 flex flex-col shadow-sm hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover rounded-2xl mb-4" alt="Jaipur">
+                <h3 class="text-xl font-extrabold text-zinc-900 mb-1">Jaipur, Rajasthan</h3>
+                <p class="text-xs text-zinc-500 mb-6 flex-grow">Royal Heritage Tour – Private Guided Palace & Fort Expedition with Traditional Rajasthani Lunch</p>
+                <div class="flex items-center justify-between pt-4 border-t border-zinc-100">
+                    <div>
+                        <span class="text-xs text-zinc-400 block font-medium">From</span>
+                        <span class="text-xl font-extrabold text-indigo-600">₹15,499</span>
+                    </div>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-3 rounded-xl transition">View Details</button>
+                </div>
+                <div class="mt-3 flex items-center text-xs text-zinc-500 gap-1"><i class="fa-solid fa-star text-amber-500"></i> <span class="text-zinc-800 font-bold">4.9</span> (412 reviews)</div>
+            </div>
+            <!-- Tour Card 2 -->
+            <div class="bg-white border border-zinc-200 rounded-3xl overflow-hidden p-4 flex flex-col shadow-sm hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover rounded-2xl mb-4" alt="Munnar">
+                <h3 class="text-xl font-extrabold text-zinc-900 mb-1">Munnar, Kerala</h3>
+                <p class="text-xs text-zinc-500 mb-6 flex-grow">Misty Hills & Tea Plantations – Nature Trekking, Spice Garden Strolls, and Backwater Houseboat Stay</p>
+                <div class="flex items-center justify-between pt-4 border-t border-zinc-100">
+                    <div>
+                        <span class="text-xs text-zinc-400 block font-medium">From</span>
+                        <span class="text-xl font-extrabold text-indigo-600">₹18,500</span>
+                    </div>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-3 rounded-xl transition">View Details</button>
+                </div>
+                <div class="mt-3 flex items-center text-xs text-zinc-500 gap-1"><i class="fa-solid fa-star text-amber-500"></i> <span class="text-zinc-800 font-bold">4.8</span> (295 reviews)</div>
+            </div>
+            <!-- Tour Card 3 -->
+            <div class="bg-white border border-zinc-200 rounded-3xl overflow-hidden p-4 flex flex-col shadow-sm hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" class="w-full h-52 object-cover rounded-2xl mb-4" alt="Ladakh">
+                <h3 class="text-xl font-extrabold text-zinc-900 mb-1">Leh Ladakh</h3>
+                <p class="text-xs text-zinc-500 mb-6 flex-grow">High Mountain Passes – Pangong Lake Exploration, Nubra Valley ATV Rides & Monastery Tours</p>
+                <div class="flex items-center justify-between pt-4 border-t border-zinc-100">
+                    <div>
+                        <span class="text-xs text-zinc-400 block font-medium">From</span>
+                        <span class="text-xl font-extrabold text-indigo-600">₹32,999</span>
+                    </div>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-3 rounded-xl transition">View Details</button>
+                </div>
+                <div class="mt-3 flex items-center text-xs text-zinc-500 gap-1"><i class="fa-solid fa-star text-amber-500"></i> <span class="text-zinc-800 font-bold">4.95</span> (520 reviews)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. WRITE A REVIEW SECTION -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="mb-10 text-center">
+            <h2 class="text-3xl font-extrabold text-zinc-900 mb-2">Share Your Experience</h2>
+            <p class="text-sm text-zinc-500 max-w-xl mx-auto">Leave a review of your recent Indian getaway to help fellow adventurers choose their next destination.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-zinc-200/40">
+            <form id="reviewForm" onsubmit="event.preventDefault(); alert('Review submitted!'); this.reset(); resetStars();">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Select Tour Destination</label>
+                        <select class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-800 focus:outline-none focus:border-indigo-500 transition font-medium">
+                            <option value="jaipur">Jaipur, Rajasthan</option>
+                            <option value="munnar">Munnar, Kerala</option>
+                            <option value="ladakh">Leh Ladakh</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Your Rating</label>
+                        <input type="hidden" id="ratingValue" name="rating" value="5">
+                        <div class="flex items-center space-x-2 h-11 bg-zinc-50 border border-zinc-200 rounded-xl px-4" id="starContainer">
+                            <button type="button" data-value="1" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                            <button type="button" data-value="2" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                            <button type="button" data-value="3" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                            <button type="button" data-value="4" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                            <button type="button" data-value="5" class="star-btn text-amber-500 text-lg"><i class="fa-solid fa-star"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Review Title</label>
+                    <input type="text" placeholder="e.g., Incredible heritage walk!" required class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-800 focus:outline-none focus:border-indigo-500 transition">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Detailed Review</label>
+                    <textarea rows="4" placeholder="Write about hospitality, itinerary, comfort..." required class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-800 focus:outline-none focus:border-indigo-500 transition resize-none"></textarea>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-zinc-100">
+                    <p class="text-[11px] text-zinc-400">Your review will be checked and posted publicly.</p>
+                    <button type="submit" class="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm px-8 py-3.5 rounded-xl transition shadow-md shadow-orange-500/20">
+                        Submit Review
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 7. CTA BANNER -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden shadow-xl shadow-indigo-600/10">
+            <div class="max-w-xl z-10 text-white">
+                <h2 class="text-2xl md:text-4xl font-extrabold mb-3 tracking-tight">Start Your Real Around The World Journey Today</h2>
+                <p class="text-xs text-indigo-100 opacity-90 leading-relaxed">Your dream place is just a click away. TripWise is here to assist you every step of the way.</p>
+            </div>
+            <button class="w-full md:w-auto bg-white hover:bg-zinc-50 text-indigo-600 font-extrabold text-sm px-8 py-4 rounded-xl transition shadow-lg whitespace-nowrap z-10">
+                Explore Places
+            </button>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="bg-zinc-900 text-zinc-400 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+            <div>
+                <div class="relative max-w-xs">
+                    <input type="email" placeholder="Enter Your Email" class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500">
+                    <button class="absolute right-2 top-2 w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-xs"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase text-zinc-500 tracking-wider mb-4">Places</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition">Trending Places</a></li>
+                    <li><a href="#" class="hover:text-white transition">Unexplored Places</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase text-zinc-500 tracking-wider mb-4">About Us</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition">Our Story</a></li>
+                    <li><a href="#" class="hover:text-white transition">Our Team</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase text-zinc-500 tracking-wider mb-4">Packages</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition">Premium Packages</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase text-zinc-500 tracking-wider mb-4">Contact</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-[11px] text-zinc-500">&copy; @2026Tripsy. All Rights Reserved.</p>
+            <div class="flex space-x-4 text-zinc-500 text-sm">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Functionalities -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Hero Default Date Setup
+            const dateInput = document.getElementById('searchWhen');
+            if(dateInput) {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                dateInput.value = tomorrow.toISOString().split('T')[0];
+            }
+
+            // Interactive Star Ratings Setup
+            const stars = document.querySelectorAll(".star-btn");
+            const ratingInput = document.getElementById("ratingValue");
+            if (stars.length) {
+                stars.forEach(star => {
+                    star.addEventListener("click", () => {
+                        const val = parseInt(star.getAttribute("data-value"));
+                        ratingInput.value = val;
+                        stars.forEach(s => {
+                            const sv = parseInt(s.getAttribute("data-value"));
+                            s.className = `star-btn text-lg ${sv <= val ? 'text-amber-500' : 'text-zinc-300'}`;
+                        });
+                    });
+                });
+            }
+        });
+
+        function handleSearchSubmit() {
+            alert(`Searching for details:\n📍 Destination: ${document.getElementById('searchWhere').value}\n📅 Date: ${document.getElementById('searchWhen').value}`);
+        }
+    </script>
+</body>
+</html>

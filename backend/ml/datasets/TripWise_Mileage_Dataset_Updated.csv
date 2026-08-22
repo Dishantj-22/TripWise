@@ -1,0 +1,1001 @@
+Brand,Model,Vehicle_Year,Vehicle_Type,Fuel_Type,Transmission,Seating_Capacity,Mileage,Odometer_km,Vehicle_Condition
+Hyundai,Exter,2015,SUV,Diesel,Automatic,4,24.6,64834,Good
+Hyundai,i20,2023,Hatchback,CNG,Automatic,7,15.2,60924,Good
+Toyota,Glanza,2022,Hatchback,Petrol,Automatic,7,16.1,57682,Good
+MG,Comet EV,2019,Hatchback,Electric,Manual,7,6.1,114843,Fair
+Tata,Nexon,2019,SUV,Diesel,Manual,5,18.3,103531,Fair
+MG,Hector,2024,SUV,CNG,Automatic,4,12.2,143783,Needs Service
+Maruti Suzuki,Brezza,2015,Hatchback,Diesel,Manual,5,23.3,63775,Good
+Hyundai,i20,2022,Hatchback,Diesel,Automatic,7,16.0,124559,Fair
+Kia,Seltos,2017,SUV,Diesel,Manual,5,18.9,92090,Fair
+Kia,Sonet,2016,Hatchback,Petrol,Manual,5,21.5,31887,Good
+Hyundai,Creta,2020,SUV,Diesel,Manual,5,24.4,66341,Good
+Toyota,Glanza,2025,Hatchback,Petrol,Automatic,7,14.2,31757,Good
+Maruti Suzuki,Fronx,2023,Hatchback,Petrol,Manual,7,20.6,48238,Good
+Toyota,Innova Hycross,2023,MPV,Diesel,Manual,5,27.7,169415,Needs Service
+Honda,Amaze,2022,Sedan,CNG,Manual,5,16.7,111697,Fair
+Tata,Punch,2023,Hatchback,CNG,Manual,5,21.9,133040,Fair
+MG,Windsor EV,2020,Hatchback,Electric,Manual,5,6.1,139939,Fair
+Tata,Punch,2016,Hatchback,CNG,Automatic,4,12.9,160784,Needs Service
+Honda,Amaze,2024,Sedan,Diesel,Manual,4,15.4,12643,Excellent
+Mahindra,Thar,2019,Hatchback,CNG,Automatic,7,18.8,149345,Needs Service
+Toyota,Glanza,2020,Hatchback,Petrol,Automatic,5,13.5,12149,Excellent
+MG,Hector,2019,SUV,Petrol,Manual,5,24.8,21148,Good
+Toyota,Glanza,2017,Hatchback,CNG,Manual,5,15.8,167504,Needs Service
+Mahindra,Bolero,2025,Hatchback,Petrol,Manual,7,17.5,129544,Fair
+Tata,Tiago,2023,Hatchback,Diesel,Manual,5,14.7,145276,Needs Service
+Kia,Seltos,2022,SUV,CNG,Manual,5,21.6,52447,Good
+Toyota,Innova Hycross,2019,MPV,Petrol,Automatic,5,23.4,85213,Fair
+MG,Hector,2024,SUV,CNG,Automatic,5,22.5,15039,Excellent
+Toyota,Glanza,2020,Hatchback,Petrol,Automatic,5,18.4,159467,Needs Service
+Honda,Elevate,2019,Hatchback,CNG,Manual,7,21.3,166160,Needs Service
+Kia,Sonet,2019,Hatchback,CNG,Automatic,7,27.0,21469,Good
+Toyota,Innova Hycross,2017,MPV,Petrol,Automatic,4,24.8,83070,Fair
+MG,Hector,2016,SUV,Petrol,Manual,4,19.4,39801,Good
+Hyundai,Creta,2021,SUV,Petrol,Manual,4,22.7,91114,Fair
+Tata,Altroz,2024,Hatchback,Petrol,Manual,5,18.8,94690,Fair
+Kia,Carens,2015,MPV,Petrol,Manual,7,15.4,99677,Fair
+MG,Comet EV,2024,Hatchback,Electric,Manual,4,6.3,172034,Needs Service
+Mahindra,Scorpio-N,2024,SUV,Diesel,Manual,5,27.1,86777,Fair
+Toyota,Fortuner,2018,Hatchback,Diesel,Manual,4,18.5,56715,Good
+Maruti Suzuki,Fronx,2021,Hatchback,Petrol,Automatic,7,20.7,94677,Fair
+Honda,Elevate,2016,Hatchback,Petrol,Automatic,5,21.5,80270,Fair
+Honda,Elevate,2023,Hatchback,CNG,Manual,7,23.4,114891,Fair
+Tata,Nexon,2022,SUV,Diesel,Automatic,7,24.9,13422,Excellent
+Tata,Nexon,2018,SUV,Diesel,Automatic,5,23.0,147207,Needs Service
+MG,Windsor EV,2015,Hatchback,Electric,Manual,5,7.9,15373,Excellent
+MG,Comet EV,2025,Hatchback,Electric,Manual,5,5.4,5372,Excellent
+Mahindra,Scorpio-N,2019,SUV,Petrol,Manual,5,24.8,148648,Needs Service
+Hyundai,i20,2024,Hatchback,Petrol,Manual,5,13.6,24498,Good
+Hyundai,Venue,2022,SUV,CNG,Automatic,5,12.2,119355,Fair
+Honda,Amaze,2023,Sedan,CNG,Manual,5,17.5,100404,Fair
+Toyota,Innova Hycross,2023,MPV,Diesel,Manual,7,13.0,154828,Needs Service
+Honda,Amaze,2017,Sedan,CNG,Manual,7,24.5,174468,Needs Service
+Tata,Punch,2019,Hatchback,Diesel,Manual,7,27.8,78840,Good
+MG,Astor,2020,Hatchback,Petrol,Automatic,5,22.2,57308,Good
+Maruti Suzuki,Swift,2020,Hatchback,Petrol,Manual,4,21.7,72797,Good
+MG,Windsor EV,2015,Hatchback,Electric,Manual,4,6.6,137088,Fair
+Maruti Suzuki,Swift,2021,Hatchback,Diesel,Manual,7,24.6,91630,Fair
+Maruti Suzuki,Baleno,2016,Hatchback,CNG,Manual,4,19.2,56397,Good
+Honda,City,2023,Sedan,Diesel,Manual,5,15.9,168568,Needs Service
+Kia,Seltos,2022,SUV,CNG,Manual,4,22.4,76343,Good
+MG,Windsor EV,2025,Hatchback,Electric,Manual,4,7.3,141115,Needs Service
+Honda,Elevate,2023,Hatchback,Diesel,Manual,5,20.8,52172,Good
+Kia,Seltos,2019,SUV,Diesel,Automatic,5,14.9,73985,Good
+Mahindra,Thar,2025,Hatchback,Diesel,Manual,5,14.1,36135,Good
+Maruti Suzuki,Baleno,2019,Hatchback,CNG,Manual,4,26.0,108762,Fair
+Hyundai,Exter,2018,SUV,CNG,Automatic,7,25.4,8227,Excellent
+Hyundai,Exter,2024,SUV,CNG,Automatic,7,23.1,28627,Good
+Kia,Carens,2019,MPV,Diesel,Manual,5,24.9,163848,Needs Service
+Mahindra,Thar,2015,Hatchback,Diesel,Manual,4,25.9,32373,Good
+Kia,Sonet,2020,Hatchback,Diesel,Manual,5,20.4,25508,Good
+Maruti Suzuki,Fronx,2023,Hatchback,Petrol,Manual,5,19.7,161781,Needs Service
+Maruti Suzuki,Baleno,2017,Hatchback,Diesel,Automatic,5,18.4,147898,Needs Service
+Mahindra,XUV700,2020,SUV,CNG,Manual,7,13.5,29309,Good
+Toyota,Glanza,2016,Hatchback,Petrol,Automatic,5,16.6,8164,Excellent
+Mahindra,Scorpio-N,2022,SUV,Diesel,Automatic,4,22.5,6664,Excellent
+Honda,Elevate,2020,Hatchback,CNG,Manual,7,12.7,140106,Needs Service
+Kia,Seltos,2018,SUV,Diesel,Automatic,4,14.4,165457,Needs Service
+Mahindra,Bolero,2017,Hatchback,CNG,Manual,5,22.5,177109,Needs Service
+Hyundai,Creta,2021,SUV,Petrol,Automatic,4,12.1,172974,Needs Service
+Hyundai,Exter,2022,SUV,Diesel,Manual,5,24.8,121467,Fair
+Mahindra,Scorpio-N,2025,SUV,Diesel,Manual,5,27.0,145473,Needs Service
+Toyota,Innova Hycross,2019,MPV,Diesel,Manual,5,27.7,47673,Good
+Kia,Seltos,2016,SUV,Diesel,Manual,4,24.0,46647,Good
+MG,Windsor EV,2024,Hatchback,Electric,Manual,7,7.6,60880,Good
+Kia,Seltos,2021,SUV,CNG,Automatic,5,18.6,12293,Excellent
+Tata,Punch,2022,Hatchback,Diesel,Manual,7,24.0,85071,Fair
+Mahindra,Scorpio-N,2016,SUV,CNG,Manual,5,17.1,95141,Fair
+Toyota,Innova Hycross,2018,MPV,Petrol,Manual,5,24.8,35066,Good
+MG,Astor,2023,Hatchback,CNG,Manual,7,17.8,156232,Needs Service
+MG,Comet EV,2024,Hatchback,Electric,Manual,4,6.2,87567,Fair
+Mahindra,Thar,2019,Hatchback,CNG,Automatic,4,23.5,176687,Needs Service
+Hyundai,i20,2023,Hatchback,CNG,Manual,7,17.2,153071,Needs Service
+Kia,Sonet,2024,Hatchback,CNG,Manual,5,22.6,148456,Needs Service
+Mahindra,Bolero,2019,Hatchback,CNG,Manual,7,23.4,5234,Excellent
+Mahindra,Thar,2024,Hatchback,Diesel,Manual,5,16.0,95978,Fair
+Hyundai,Venue,2018,SUV,Petrol,Manual,5,26.2,105015,Fair
+Tata,Punch,2017,Hatchback,Petrol,Automatic,4,21.1,123982,Fair
+Mahindra,Thar,2022,Hatchback,CNG,Manual,4,23.4,9027,Excellent
+Tata,Harrier,2022,SUV,Diesel,Automatic,7,17.4,110753,Fair
+Hyundai,Venue,2016,SUV,CNG,Manual,4,13.8,147956,Needs Service
+Mahindra,XUV700,2024,SUV,CNG,Manual,5,19.2,94682,Fair
+Kia,Seltos,2017,SUV,Diesel,Automatic,7,25.0,95889,Fair
+Honda,Elevate,2023,Hatchback,Diesel,Automatic,4,18.0,117779,Fair
+Hyundai,Verna,2015,Sedan,Petrol,Automatic,7,12.7,100496,Fair
+Hyundai,i20,2023,Hatchback,Petrol,Automatic,5,18.2,59657,Good
+Mahindra,Thar,2023,Hatchback,CNG,Automatic,5,23.2,166572,Needs Service
+Mahindra,Thar,2023,Hatchback,Diesel,Automatic,5,25.9,94932,Fair
+Toyota,Fortuner,2022,Hatchback,Diesel,Manual,5,20.2,66155,Good
+Maruti Suzuki,WagonR,2020,Hatchback,Diesel,Automatic,5,21.9,55626,Good
+Tata,Punch,2022,Hatchback,CNG,Manual,4,24.8,37781,Good
+Maruti Suzuki,Brezza,2018,Hatchback,CNG,Manual,5,17.6,100309,Fair
+Hyundai,Verna,2023,Sedan,CNG,Automatic,4,19.4,4928,Excellent
+Hyundai,Venue,2021,SUV,CNG,Automatic,5,25.4,99810,Fair
+Kia,Seltos,2020,SUV,Petrol,Automatic,7,12.8,4648,Excellent
+Honda,City,2020,Sedan,CNG,Manual,4,26.9,66359,Good
+Tata,Punch,2021,Hatchback,Diesel,Automatic,7,20.6,59430,Good
+Hyundai,Verna,2015,Sedan,CNG,Automatic,5,21.1,62757,Good
+Honda,City,2016,Sedan,CNG,Manual,4,25.0,59590,Good
+Maruti Suzuki,Baleno,2017,Hatchback,Petrol,Manual,7,14.5,18615,Excellent
+Tata,Harrier,2016,SUV,CNG,Manual,5,19.8,41525,Good
+Kia,Carens,2019,MPV,CNG,Automatic,5,21.4,169039,Needs Service
+Kia,Sonet,2022,Hatchback,Diesel,Manual,7,13.2,119514,Fair
+Hyundai,Exter,2022,SUV,Diesel,Automatic,5,14.9,145872,Needs Service
+Mahindra,Scorpio-N,2020,SUV,Diesel,Manual,7,17.3,169681,Needs Service
+Kia,Carens,2024,MPV,Petrol,Automatic,4,23.1,101272,Fair
+Honda,Amaze,2021,Sedan,Petrol,Manual,5,14.6,93769,Fair
+Hyundai,Creta,2015,SUV,Petrol,Automatic,4,21.6,78371,Good
+Mahindra,Bolero,2023,Hatchback,Diesel,Manual,5,16.9,133168,Fair
+Kia,Sonet,2021,Hatchback,Diesel,Manual,5,20.7,161888,Needs Service
+Hyundai,Verna,2021,Sedan,Petrol,Automatic,5,16.7,25266,Good
+Mahindra,Thar,2021,Hatchback,Petrol,Automatic,4,23.0,106297,Fair
+Tata,Punch,2021,Hatchback,Petrol,Automatic,5,24.2,111132,Fair
+Hyundai,i20,2015,Hatchback,Diesel,Manual,5,22.0,68106,Good
+Hyundai,Creta,2021,SUV,CNG,Manual,5,26.6,17210,Excellent
+Hyundai,Venue,2023,SUV,Diesel,Manual,5,24.0,162048,Needs Service
+Mahindra,Thar,2018,Hatchback,Petrol,Manual,7,20.7,11266,Excellent
+MG,Comet EV,2021,Hatchback,Electric,Automatic,5,7.7,15408,Excellent
+Toyota,Innova Hycross,2015,MPV,Petrol,Automatic,5,25.0,76865,Good
+Mahindra,Scorpio-N,2018,SUV,Petrol,Automatic,7,19.1,73996,Good
+MG,Hector,2019,SUV,Diesel,Automatic,7,25.9,87108,Fair
+Honda,Amaze,2025,Sedan,Diesel,Automatic,5,13.0,34585,Good
+Honda,Elevate,2017,Hatchback,Diesel,Automatic,5,27.9,104528,Fair
+Honda,City,2018,Sedan,Petrol,Manual,5,14.4,36417,Good
+Tata,Punch,2019,Hatchback,CNG,Manual,5,12.3,18051,Excellent
+Maruti Suzuki,Swift,2025,Hatchback,Diesel,Manual,7,13.1,150501,Needs Service
+Tata,Harrier,2024,SUV,CNG,Automatic,5,25.8,136400,Fair
+Mahindra,Bolero,2015,Hatchback,Petrol,Manual,4,13.7,166697,Needs Service
+Mahindra,XUV700,2017,SUV,Diesel,Manual,7,22.6,146183,Needs Service
+MG,Astor,2024,Hatchback,CNG,Automatic,4,17.8,49492,Good
+Tata,Nexon,2015,SUV,Diesel,Manual,5,27.8,76044,Good
+Kia,Carens,2024,MPV,Petrol,Manual,7,24.8,130384,Fair
+Honda,Amaze,2018,Sedan,CNG,Automatic,4,13.2,162723,Needs Service
+Honda,City,2025,Sedan,Petrol,Automatic,4,24.1,41547,Good
+Honda,Elevate,2018,Hatchback,Petrol,Manual,4,17.9,63871,Good
+Kia,Sonet,2019,Hatchback,CNG,Automatic,7,27.7,149835,Needs Service
+Honda,Amaze,2022,Sedan,CNG,Manual,7,20.3,13738,Excellent
+Honda,Elevate,2016,Hatchback,Diesel,Automatic,5,13.8,1607,Excellent
+Maruti Suzuki,Swift,2021,Hatchback,Diesel,Manual,5,27.2,145908,Needs Service
+Honda,City,2020,Sedan,CNG,Manual,5,25.2,85096,Fair
+Kia,Sonet,2023,Hatchback,Diesel,Manual,5,14.1,79106,Good
+Maruti Suzuki,Baleno,2025,Hatchback,Diesel,Manual,7,21.0,82547,Fair
+Hyundai,Creta,2022,SUV,CNG,Automatic,5,19.2,86319,Fair
+MG,Hector,2019,SUV,Diesel,Manual,5,14.6,92836,Fair
+MG,Windsor EV,2019,Hatchback,Electric,Manual,7,5.3,79768,Good
+Mahindra,Bolero,2019,Hatchback,CNG,Manual,7,14.9,118004,Fair
+Hyundai,Verna,2023,Sedan,CNG,Automatic,7,14.5,54642,Good
+Hyundai,Verna,2018,Sedan,Petrol,Automatic,4,23.1,167046,Needs Service
+Tata,Tiago,2016,Hatchback,Petrol,Automatic,5,12.3,94540,Fair
+MG,Comet EV,2018,Hatchback,Electric,Manual,4,6.0,103821,Fair
+Maruti Suzuki,WagonR,2015,Hatchback,CNG,Manual,5,24.5,84883,Fair
+MG,Astor,2016,Hatchback,Diesel,Manual,4,24.5,139753,Fair
+Mahindra,Thar,2015,Hatchback,Petrol,Manual,7,27.5,171398,Needs Service
+Kia,Sonet,2023,Hatchback,Petrol,Automatic,7,12.5,159923,Needs Service
+Maruti Suzuki,Swift,2022,Hatchback,Petrol,Automatic,7,14.6,60742,Good
+Tata,Punch,2022,Hatchback,Diesel,Manual,5,24.6,110843,Fair
+MG,Windsor EV,2020,Hatchback,Electric,Manual,7,6.6,141657,Needs Service
+Hyundai,Verna,2022,Sedan,CNG,Automatic,7,27.7,165531,Needs Service
+Honda,City,2016,Sedan,Diesel,Manual,5,27.1,150623,Needs Service
+Hyundai,Verna,2024,Sedan,Diesel,Manual,7,19.2,113698,Fair
+Hyundai,i20,2020,Hatchback,CNG,Manual,5,15.0,68646,Good
+Hyundai,Creta,2025,SUV,CNG,Manual,5,25.7,57407,Good
+Kia,Sonet,2016,Hatchback,CNG,Manual,4,14.2,151966,Needs Service
+Kia,Seltos,2020,SUV,CNG,Manual,4,12.7,89180,Fair
+Toyota,Innova Hycross,2022,MPV,Diesel,Manual,5,27.0,126961,Fair
+Kia,Seltos,2020,SUV,Petrol,Manual,4,23.9,56450,Good
+Toyota,Glanza,2019,Hatchback,Petrol,Manual,5,15.2,54342,Good
+Tata,Harrier,2016,SUV,CNG,Manual,7,18.8,21322,Good
+Toyota,Fortuner,2019,Hatchback,CNG,Automatic,5,22.6,171413,Needs Service
+Maruti Suzuki,Baleno,2017,Hatchback,Petrol,Automatic,5,27.5,21145,Good
+Kia,Carens,2018,MPV,Petrol,Manual,7,21.3,167025,Needs Service
+Tata,Nexon,2022,SUV,Petrol,Manual,5,23.8,42561,Good
+MG,Hector,2021,SUV,Diesel,Automatic,7,13.1,109742,Fair
+Hyundai,Venue,2021,SUV,Diesel,Manual,5,20.3,80834,Fair
+Tata,Tiago,2018,Hatchback,Petrol,Manual,7,17.2,62235,Good
+Hyundai,Creta,2025,SUV,Diesel,Automatic,5,12.0,31870,Good
+Kia,Carens,2015,MPV,CNG,Manual,5,23.7,62251,Good
+Hyundai,Exter,2018,SUV,Diesel,Automatic,4,20.6,167339,Needs Service
+Hyundai,Venue,2016,SUV,Diesel,Manual,7,17.3,69227,Good
+Honda,Elevate,2018,Hatchback,Petrol,Automatic,4,14.0,25730,Good
+Mahindra,Thar,2025,Hatchback,CNG,Manual,5,25.0,117777,Fair
+Toyota,Innova Hycross,2019,MPV,Diesel,Manual,5,17.6,109694,Fair
+Kia,Seltos,2024,SUV,Diesel,Manual,4,12.2,163865,Needs Service
+Honda,City,2020,Sedan,Diesel,Manual,7,14.5,52688,Good
+Kia,Sonet,2022,Hatchback,CNG,Automatic,7,24.7,40146,Good
+Hyundai,i20,2020,Hatchback,Diesel,Manual,5,27.4,63320,Good
+Maruti Suzuki,Swift,2017,Hatchback,Petrol,Manual,7,21.7,17530,Excellent
+Maruti Suzuki,WagonR,2023,Hatchback,Diesel,Automatic,5,17.4,44920,Good
+Maruti Suzuki,Baleno,2025,Hatchback,Petrol,Automatic,5,16.1,56613,Good
+Honda,Amaze,2017,Sedan,CNG,Manual,7,16.9,110255,Fair
+Mahindra,Scorpio-N,2023,SUV,Petrol,Manual,4,12.1,150500,Needs Service
+Honda,City,2017,Sedan,Diesel,Automatic,5,22.4,26171,Good
+Kia,Sonet,2022,Hatchback,Diesel,Automatic,7,14.8,152030,Needs Service
+Tata,Altroz,2023,Hatchback,CNG,Automatic,7,19.7,82946,Fair
+Maruti Suzuki,Brezza,2019,Hatchback,Petrol,Automatic,5,14.9,81390,Fair
+Tata,Tiago,2023,Hatchback,Diesel,Automatic,7,15.1,86238,Fair
+Tata,Altroz,2017,Hatchback,Petrol,Manual,5,25.9,93166,Fair
+Hyundai,Exter,2015,SUV,Petrol,Manual,4,15.1,175349,Needs Service
+Mahindra,XUV700,2016,SUV,CNG,Manual,4,21.5,126164,Fair
+Mahindra,XUV700,2019,SUV,Petrol,Automatic,5,18.2,6823,Excellent
+Kia,Seltos,2024,SUV,Petrol,Automatic,5,18.9,156894,Needs Service
+Honda,City,2016,Sedan,CNG,Manual,4,27.6,45552,Good
+Hyundai,Creta,2020,SUV,Diesel,Manual,4,15.8,72579,Good
+Tata,Punch,2022,Hatchback,Petrol,Manual,4,18.3,124286,Fair
+Toyota,Glanza,2017,Hatchback,Diesel,Automatic,7,22.0,113246,Fair
+Honda,Elevate,2022,Hatchback,Petrol,Manual,5,15.5,12747,Excellent
+Hyundai,Verna,2018,Sedan,CNG,Manual,4,21.9,104460,Fair
+Toyota,Innova Hycross,2023,MPV,Diesel,Manual,5,12.7,137811,Fair
+Mahindra,Thar,2021,Hatchback,Petrol,Manual,5,24.9,155569,Needs Service
+Kia,Sonet,2021,Hatchback,Petrol,Manual,4,23.6,21696,Good
+Tata,Tiago,2016,Hatchback,Petrol,Manual,4,25.0,164667,Needs Service
+Honda,Amaze,2020,Sedan,Petrol,Manual,7,25.1,75745,Good
+MG,Astor,2024,Hatchback,CNG,Manual,4,19.8,83124,Fair
+Toyota,Innova Hycross,2015,MPV,CNG,Manual,5,16.9,29240,Good
+Kia,Seltos,2023,SUV,Diesel,Manual,5,12.5,152140,Needs Service
+Maruti Suzuki,Brezza,2020,Hatchback,CNG,Manual,7,25.4,117515,Fair
+Hyundai,i20,2022,Hatchback,Petrol,Automatic,5,25.2,66598,Good
+Maruti Suzuki,Brezza,2022,Hatchback,Diesel,Manual,5,24.2,33725,Good
+Tata,Harrier,2019,SUV,Petrol,Manual,4,24.6,39575,Good
+MG,Comet EV,2018,Hatchback,Electric,Manual,4,6.0,101980,Fair
+Tata,Altroz,2021,Hatchback,Petrol,Manual,5,14.8,146648,Needs Service
+Toyota,Innova Hycross,2016,MPV,Diesel,Manual,5,15.1,120075,Fair
+Hyundai,Creta,2021,SUV,CNG,Manual,5,13.7,100376,Fair
+Kia,Carens,2016,MPV,Petrol,Automatic,5,12.3,44211,Good
+Mahindra,XUV700,2022,SUV,Diesel,Manual,4,12.6,79026,Good
+Tata,Nexon,2021,SUV,Petrol,Manual,5,15.9,98591,Fair
+Kia,Carens,2015,MPV,Diesel,Manual,5,16.5,78473,Good
+Kia,Seltos,2023,SUV,Petrol,Manual,4,18.8,85770,Fair
+Honda,City,2019,Sedan,Petrol,Manual,4,15.3,175101,Needs Service
+Maruti Suzuki,Swift,2023,Hatchback,Petrol,Automatic,7,22.0,65084,Good
+Mahindra,Thar,2015,Hatchback,Petrol,Automatic,5,16.3,154172,Needs Service
+Kia,Sonet,2016,Hatchback,CNG,Manual,4,24.3,59731,Good
+Hyundai,Exter,2020,SUV,Petrol,Manual,7,26.4,9311,Excellent
+Tata,Altroz,2017,Hatchback,Diesel,Manual,5,17.3,110736,Fair
+MG,Comet EV,2018,Hatchback,Electric,Manual,5,5.0,26767,Good
+Kia,Seltos,2022,SUV,CNG,Automatic,7,25.9,117544,Fair
+Tata,Altroz,2016,Hatchback,Petrol,Manual,7,16.7,161470,Needs Service
+Hyundai,Venue,2022,SUV,Diesel,Manual,4,14.3,131574,Fair
+MG,Comet EV,2016,Hatchback,Electric,Automatic,7,5.9,17120,Excellent
+Maruti Suzuki,WagonR,2016,Hatchback,CNG,Manual,5,27.0,45125,Good
+Toyota,Glanza,2021,Hatchback,CNG,Manual,4,19.3,45630,Good
+Honda,Elevate,2023,Hatchback,Diesel,Automatic,7,27.5,1975,Excellent
+Hyundai,Venue,2016,SUV,Diesel,Manual,4,20.9,96794,Fair
+Mahindra,Bolero,2018,Hatchback,CNG,Manual,5,19.0,171011,Needs Service
+Mahindra,Thar,2025,Hatchback,Diesel,Manual,5,17.1,82577,Fair
+Kia,Carens,2025,MPV,CNG,Automatic,5,16.4,104257,Fair
+Toyota,Fortuner,2021,Hatchback,CNG,Manual,5,18.9,13690,Excellent
+Kia,Seltos,2019,SUV,Petrol,Manual,5,17.7,16851,Excellent
+Tata,Harrier,2018,SUV,Diesel,Manual,5,20.6,13065,Excellent
+Tata,Altroz,2021,Hatchback,Diesel,Manual,4,16.5,91509,Fair
+MG,Astor,2021,Hatchback,CNG,Manual,4,12.0,28555,Good
+Maruti Suzuki,WagonR,2018,Hatchback,Diesel,Manual,7,14.3,98553,Fair
+Hyundai,Venue,2015,SUV,Diesel,Manual,5,24.8,97147,Fair
+Maruti Suzuki,Brezza,2016,Hatchback,Diesel,Manual,5,13.5,40846,Good
+Maruti Suzuki,Brezza,2025,Hatchback,Petrol,Automatic,7,23.3,106693,Fair
+Toyota,Fortuner,2019,Hatchback,Petrol,Manual,5,20.0,86131,Fair
+Tata,Altroz,2020,Hatchback,CNG,Automatic,5,24.9,17562,Excellent
+Hyundai,i20,2020,Hatchback,CNG,Manual,4,24.2,92081,Fair
+Hyundai,Exter,2023,SUV,CNG,Manual,5,24.7,80757,Fair
+Honda,City,2015,Sedan,Diesel,Automatic,5,13.1,54486,Good
+Kia,Sonet,2015,Hatchback,CNG,Automatic,5,23.1,155865,Needs Service
+Maruti Suzuki,Fronx,2018,Hatchback,CNG,Manual,5,17.4,137050,Fair
+Toyota,Fortuner,2020,Hatchback,Diesel,Automatic,4,26.2,81254,Fair
+Maruti Suzuki,Brezza,2022,Hatchback,Diesel,Manual,5,20.7,127552,Fair
+Maruti Suzuki,Brezza,2020,Hatchback,Diesel,Manual,4,27.3,25214,Good
+Kia,Seltos,2019,SUV,Diesel,Automatic,5,16.3,122935,Fair
+Tata,Tiago,2025,Hatchback,Petrol,Manual,4,22.8,63865,Good
+Honda,City,2016,Sedan,Petrol,Automatic,4,22.0,117659,Fair
+Maruti Suzuki,Swift,2021,Hatchback,CNG,Manual,5,15.8,31861,Good
+MG,Windsor EV,2020,Hatchback,Electric,Automatic,7,5.1,60908,Good
+Toyota,Innova Hycross,2020,MPV,Diesel,Manual,4,15.3,102625,Fair
+Tata,Tiago,2023,Hatchback,CNG,Manual,5,18.5,133038,Fair
+Hyundai,Verna,2017,Sedan,Diesel,Manual,5,26.9,102263,Fair
+Hyundai,Creta,2025,SUV,CNG,Manual,7,26.2,177632,Needs Service
+Kia,Sonet,2018,Hatchback,Diesel,Manual,4,17.3,12495,Excellent
+MG,Comet EV,2020,Hatchback,Electric,Manual,5,7.6,36014,Good
+Maruti Suzuki,Fronx,2020,Hatchback,Diesel,Manual,5,15.0,10348,Excellent
+Toyota,Glanza,2024,Hatchback,Petrol,Manual,7,27.3,134058,Fair
+Mahindra,XUV700,2019,SUV,Petrol,Manual,5,15.9,12405,Excellent
+Hyundai,Exter,2018,SUV,Diesel,Automatic,4,19.1,132856,Fair
+Tata,Punch,2015,Hatchback,CNG,Automatic,7,21.0,39714,Good
+Tata,Nexon,2019,SUV,Diesel,Automatic,5,24.3,166120,Needs Service
+Kia,Sonet,2024,Hatchback,Diesel,Manual,5,18.0,130279,Fair
+Hyundai,Exter,2015,SUV,Petrol,Automatic,5,15.0,5698,Excellent
+Honda,Amaze,2024,Sedan,Diesel,Manual,7,16.0,5249,Excellent
+MG,Windsor EV,2020,Hatchback,Electric,Manual,5,7.7,148892,Needs Service
+Mahindra,Thar,2016,Hatchback,CNG,Manual,7,21.6,170242,Needs Service
+MG,Comet EV,2018,Hatchback,Electric,Automatic,5,7.4,166786,Needs Service
+Honda,Amaze,2021,Sedan,CNG,Manual,5,16.8,168305,Needs Service
+Mahindra,Scorpio-N,2018,SUV,Petrol,Manual,5,24.5,145837,Needs Service
+Toyota,Fortuner,2016,Hatchback,Diesel,Automatic,5,14.8,86385,Fair
+Toyota,Glanza,2022,Hatchback,Diesel,Manual,5,15.8,79442,Good
+Kia,Sonet,2022,Hatchback,CNG,Manual,4,27.1,21493,Good
+Mahindra,Scorpio-N,2016,SUV,CNG,Automatic,5,15.8,47069,Good
+Kia,Sonet,2018,Hatchback,Diesel,Manual,5,25.9,143314,Needs Service
+Kia,Seltos,2017,SUV,CNG,Manual,5,18.0,3797,Excellent
+Toyota,Fortuner,2022,Hatchback,CNG,Automatic,4,15.1,178073,Needs Service
+Tata,Altroz,2023,Hatchback,Petrol,Automatic,5,13.5,47602,Good
+MG,Hector,2022,SUV,Petrol,Manual,5,17.6,156654,Needs Service
+Kia,Seltos,2025,SUV,CNG,Manual,5,24.3,153810,Needs Service
+Toyota,Glanza,2023,Hatchback,CNG,Manual,4,16.8,104659,Fair
+Maruti Suzuki,WagonR,2018,Hatchback,Diesel,Manual,5,16.4,160925,Needs Service
+MG,Hector,2016,SUV,CNG,Manual,7,22.2,168961,Needs Service
+MG,Comet EV,2021,Hatchback,Electric,Manual,4,5.7,99947,Fair
+Honda,City,2025,Sedan,Diesel,Automatic,4,19.3,61874,Good
+Maruti Suzuki,Baleno,2025,Hatchback,Diesel,Automatic,4,22.2,16169,Excellent
+Mahindra,Thar,2017,Hatchback,Petrol,Manual,5,18.9,81932,Fair
+Maruti Suzuki,Brezza,2017,Hatchback,Diesel,Manual,7,19.1,95726,Fair
+Toyota,Innova Hycross,2015,MPV,Petrol,Manual,7,19.0,51961,Good
+Honda,Elevate,2016,Hatchback,Diesel,Automatic,4,12.5,125833,Fair
+Toyota,Fortuner,2021,Hatchback,CNG,Manual,5,17.6,147244,Needs Service
+Hyundai,Creta,2021,SUV,Diesel,Manual,7,27.3,167439,Needs Service
+Hyundai,Verna,2019,Sedan,CNG,Manual,5,23.4,3002,Excellent
+Tata,Altroz,2018,Hatchback,Petrol,Manual,5,23.5,42996,Good
+Toyota,Glanza,2024,Hatchback,Petrol,Automatic,5,27.5,175429,Needs Service
+Tata,Punch,2020,Hatchback,Diesel,Automatic,7,18.5,144355,Needs Service
+Maruti Suzuki,Fronx,2023,Hatchback,Diesel,Manual,5,19.4,11179,Excellent
+Maruti Suzuki,WagonR,2025,Hatchback,CNG,Automatic,5,18.2,98069,Fair
+Toyota,Glanza,2018,Hatchback,Diesel,Automatic,5,28.0,164938,Needs Service
+Honda,City,2017,Sedan,CNG,Manual,5,19.0,82872,Fair
+Hyundai,i20,2025,Hatchback,CNG,Manual,5,26.4,42499,Good
+Maruti Suzuki,Baleno,2021,Hatchback,Diesel,Manual,5,14.6,109145,Fair
+Toyota,Glanza,2018,Hatchback,CNG,Automatic,4,27.0,26106,Good
+Kia,Sonet,2021,Hatchback,Diesel,Manual,7,25.5,179388,Needs Service
+Kia,Carens,2020,MPV,Petrol,Manual,4,27.4,58890,Good
+Maruti Suzuki,WagonR,2024,Hatchback,Petrol,Manual,7,19.7,95481,Fair
+MG,Windsor EV,2017,Hatchback,Electric,Automatic,5,7.7,109123,Fair
+Kia,Seltos,2025,SUV,Petrol,Manual,4,12.2,41804,Good
+MG,Windsor EV,2025,Hatchback,Electric,Automatic,7,7.3,34933,Good
+Hyundai,Creta,2016,SUV,Petrol,Manual,5,21.7,117362,Fair
+Honda,City,2016,Sedan,Diesel,Automatic,5,25.0,164233,Needs Service
+Honda,Elevate,2020,Hatchback,Petrol,Manual,5,23.2,124654,Fair
+Hyundai,Exter,2015,SUV,Diesel,Manual,5,25.8,120432,Fair
+Honda,Amaze,2018,Sedan,Petrol,Automatic,5,13.0,25066,Good
+Maruti Suzuki,Brezza,2019,Hatchback,Diesel,Automatic,5,26.1,49941,Good
+MG,Windsor EV,2025,Hatchback,Electric,Manual,5,6.5,120933,Fair
+Hyundai,Verna,2025,Sedan,Diesel,Manual,5,25.8,159103,Needs Service
+Toyota,Glanza,2016,Hatchback,Petrol,Automatic,7,18.8,149824,Needs Service
+Mahindra,XUV700,2024,SUV,Diesel,Automatic,5,21.5,45534,Good
+MG,Windsor EV,2016,Hatchback,Electric,Manual,7,7.4,117146,Fair
+Hyundai,Venue,2023,SUV,Petrol,Manual,7,27.4,36166,Good
+Maruti Suzuki,Brezza,2024,Hatchback,CNG,Automatic,5,16.0,103914,Fair
+Tata,Harrier,2024,SUV,Diesel,Automatic,4,16.8,15563,Excellent
+Maruti Suzuki,Swift,2017,Hatchback,Diesel,Automatic,5,23.4,166801,Needs Service
+MG,Hector,2024,SUV,Petrol,Manual,7,14.2,52191,Good
+Mahindra,Thar,2016,Hatchback,Diesel,Manual,7,23.3,69670,Good
+Honda,City,2020,Sedan,Diesel,Automatic,4,15.2,150310,Needs Service
+Tata,Altroz,2020,Hatchback,Diesel,Automatic,4,23.1,96340,Fair
+Honda,City,2018,Sedan,Petrol,Automatic,4,27.7,15153,Excellent
+Honda,City,2015,Sedan,Petrol,Manual,4,27.1,140767,Needs Service
+Mahindra,XUV700,2023,SUV,Diesel,Manual,4,18.6,90679,Fair
+Maruti Suzuki,WagonR,2018,Hatchback,Petrol,Automatic,7,23.9,111316,Fair
+Kia,Carens,2022,MPV,Diesel,Manual,5,19.6,141219,Needs Service
+Maruti Suzuki,Swift,2019,Hatchback,CNG,Automatic,5,20.8,172378,Needs Service
+Hyundai,i20,2019,Hatchback,Petrol,Manual,5,23.9,148738,Needs Service
+Toyota,Innova Hycross,2024,MPV,Petrol,Automatic,4,17.1,136951,Fair
+Mahindra,Thar,2016,Hatchback,Diesel,Automatic,5,21.5,69177,Good
+Honda,Elevate,2023,Hatchback,Petrol,Manual,7,27.4,176000,Needs Service
+Mahindra,XUV700,2023,SUV,Diesel,Manual,7,24.2,128023,Fair
+Kia,Carens,2019,MPV,Diesel,Manual,4,19.3,24625,Good
+Mahindra,Bolero,2017,Hatchback,Diesel,Manual,7,15.7,43716,Good
+Hyundai,i20,2015,Hatchback,Diesel,Manual,5,17.7,151943,Needs Service
+Tata,Punch,2025,Hatchback,Diesel,Manual,7,17.0,168356,Needs Service
+Tata,Nexon,2025,SUV,Diesel,Automatic,4,21.7,1012,Excellent
+Toyota,Glanza,2017,Hatchback,Diesel,Manual,4,19.1,147500,Needs Service
+Toyota,Innova Hycross,2015,MPV,CNG,Manual,5,27.8,100471,Fair
+Honda,Elevate,2016,Hatchback,Diesel,Manual,4,19.3,122243,Fair
+MG,Hector,2015,SUV,Diesel,Manual,5,21.8,34083,Good
+Honda,Elevate,2024,Hatchback,Diesel,Manual,5,14.4,15864,Excellent
+Kia,Carens,2024,MPV,Petrol,Manual,4,23.7,133507,Fair
+Honda,Elevate,2016,Hatchback,Petrol,Automatic,5,14.1,1290,Excellent
+Tata,Tiago,2023,Hatchback,Diesel,Manual,7,14.8,93956,Fair
+Maruti Suzuki,Brezza,2016,Hatchback,CNG,Automatic,4,27.6,88848,Fair
+Tata,Altroz,2019,Hatchback,CNG,Manual,4,24.5,120469,Fair
+Mahindra,Thar,2021,Hatchback,Petrol,Manual,4,27.2,42656,Good
+Tata,Punch,2022,Hatchback,Petrol,Automatic,4,16.4,2418,Excellent
+Hyundai,Venue,2024,SUV,Petrol,Automatic,4,20.6,125294,Fair
+Maruti Suzuki,WagonR,2015,Hatchback,CNG,Manual,4,14.9,163893,Needs Service
+MG,Hector,2017,SUV,Petrol,Manual,4,19.4,56542,Good
+Maruti Suzuki,WagonR,2018,Hatchback,CNG,Manual,7,14.8,33299,Good
+Hyundai,Exter,2018,SUV,Diesel,Manual,4,16.5,163219,Needs Service
+Toyota,Glanza,2025,Hatchback,CNG,Manual,5,20.2,137121,Fair
+MG,Windsor EV,2023,Hatchback,Electric,Manual,4,7.2,17698,Excellent
+Hyundai,i20,2018,Hatchback,Petrol,Manual,5,27.8,27489,Good
+Honda,Amaze,2025,Sedan,Petrol,Manual,7,24.6,95904,Fair
+Hyundai,Creta,2020,SUV,Petrol,Automatic,5,14.2,126567,Fair
+Maruti Suzuki,Baleno,2020,Hatchback,Petrol,Automatic,5,12.6,104505,Fair
+MG,Comet EV,2019,Hatchback,Electric,Manual,7,7.3,42336,Good
+Hyundai,Venue,2016,SUV,Diesel,Manual,5,15.5,150153,Needs Service
+Tata,Harrier,2025,SUV,Petrol,Manual,4,22.3,143806,Needs Service
+Hyundai,Creta,2015,SUV,Petrol,Manual,7,23.5,7903,Excellent
+Mahindra,XUV700,2016,SUV,Petrol,Automatic,7,26.9,110294,Fair
+Kia,Seltos,2017,SUV,Diesel,Automatic,4,19.7,21229,Good
+Maruti Suzuki,Brezza,2018,Hatchback,CNG,Automatic,4,15.3,141328,Needs Service
+Hyundai,Verna,2016,Sedan,Petrol,Automatic,5,22.3,56712,Good
+Tata,Nexon,2015,SUV,Diesel,Automatic,7,18.0,10727,Excellent
+Honda,City,2022,Sedan,Petrol,Automatic,5,21.9,133539,Fair
+Hyundai,Exter,2025,SUV,CNG,Manual,5,16.4,55953,Good
+Mahindra,Thar,2016,Hatchback,CNG,Manual,5,20.6,59000,Good
+MG,Astor,2018,Hatchback,CNG,Manual,7,17.9,101024,Fair
+Mahindra,Bolero,2020,Hatchback,Diesel,Manual,7,27.5,114625,Fair
+Hyundai,Exter,2025,SUV,Petrol,Manual,5,17.1,65727,Good
+Kia,Sonet,2022,Hatchback,CNG,Automatic,5,24.2,71458,Good
+Toyota,Innova Hycross,2023,MPV,Diesel,Manual,5,18.5,158502,Needs Service
+Mahindra,XUV700,2021,SUV,Petrol,Manual,7,13.9,164350,Needs Service
+Honda,Elevate,2019,Hatchback,Diesel,Manual,4,14.7,158102,Needs Service
+Maruti Suzuki,Brezza,2017,Hatchback,Diesel,Manual,7,19.7,170906,Needs Service
+Maruti Suzuki,Fronx,2024,Hatchback,Petrol,Manual,5,20.9,68025,Good
+Honda,Amaze,2023,Sedan,Petrol,Automatic,4,26.4,104011,Fair
+MG,Comet EV,2015,Hatchback,Electric,Manual,5,5.7,115924,Fair
+Mahindra,Scorpio-N,2022,SUV,Diesel,Automatic,5,17.9,144817,Needs Service
+Maruti Suzuki,Baleno,2015,Hatchback,Diesel,Manual,4,20.7,112002,Fair
+Mahindra,Thar,2023,Hatchback,CNG,Manual,4,14.0,101912,Fair
+Toyota,Fortuner,2024,Hatchback,Diesel,Manual,5,24.7,177703,Needs Service
+Maruti Suzuki,WagonR,2016,Hatchback,Diesel,Automatic,7,18.1,128266,Fair
+Tata,Tiago,2019,Hatchback,CNG,Automatic,7,21.4,21819,Good
+Maruti Suzuki,Fronx,2016,Hatchback,Petrol,Manual,7,25.5,154161,Needs Service
+Honda,City,2021,Sedan,Petrol,Automatic,7,16.1,97064,Fair
+Honda,City,2025,Sedan,Diesel,Manual,5,13.2,32591,Good
+Kia,Sonet,2015,Hatchback,Diesel,Automatic,5,27.8,31485,Good
+Mahindra,Thar,2019,Hatchback,Petrol,Manual,7,16.5,25482,Good
+MG,Astor,2025,Hatchback,Petrol,Manual,5,19.8,172109,Needs Service
+Mahindra,Thar,2018,Hatchback,Diesel,Automatic,7,14.5,170753,Needs Service
+Honda,Elevate,2016,Hatchback,Petrol,Manual,4,21.2,124581,Fair
+Maruti Suzuki,Baleno,2020,Hatchback,Diesel,Manual,5,17.5,142793,Needs Service
+Hyundai,Venue,2020,SUV,Petrol,Manual,4,20.2,143773,Needs Service
+Kia,Seltos,2022,SUV,Diesel,Manual,4,13.3,7410,Excellent
+Tata,Punch,2018,Hatchback,CNG,Automatic,7,19.5,78701,Good
+Tata,Punch,2025,Hatchback,Diesel,Automatic,4,16.2,175187,Needs Service
+Toyota,Fortuner,2020,Hatchback,Diesel,Automatic,7,23.1,5394,Excellent
+Kia,Seltos,2018,SUV,CNG,Manual,4,13.5,168580,Needs Service
+Hyundai,Verna,2025,Sedan,Diesel,Manual,7,18.4,141139,Needs Service
+Kia,Carens,2025,MPV,Petrol,Manual,4,21.2,95318,Fair
+Hyundai,Exter,2020,SUV,CNG,Manual,7,21.1,70963,Good
+Toyota,Innova Hycross,2015,MPV,Diesel,Manual,5,25.6,2967,Excellent
+Hyundai,Exter,2021,SUV,CNG,Automatic,5,17.8,111490,Fair
+Maruti Suzuki,WagonR,2021,Hatchback,CNG,Automatic,7,14.8,20147,Good
+Mahindra,Thar,2016,Hatchback,Diesel,Automatic,7,21.9,25559,Good
+Honda,Amaze,2021,Sedan,Diesel,Manual,4,15.6,3986,Excellent
+Maruti Suzuki,Fronx,2024,Hatchback,CNG,Manual,7,17.3,133825,Fair
+Tata,Nexon,2016,SUV,CNG,Manual,4,18.7,83907,Fair
+Maruti Suzuki,WagonR,2022,Hatchback,Diesel,Manual,5,28.0,119130,Fair
+Toyota,Innova Hycross,2016,MPV,CNG,Manual,4,23.5,167457,Needs Service
+MG,Astor,2023,Hatchback,Diesel,Manual,5,17.7,29852,Good
+Maruti Suzuki,Swift,2019,Hatchback,CNG,Manual,5,27.8,78364,Good
+Hyundai,i20,2015,Hatchback,CNG,Automatic,7,17.3,124787,Fair
+Honda,Elevate,2025,Hatchback,Petrol,Manual,4,16.6,143746,Needs Service
+MG,Astor,2016,Hatchback,Diesel,Automatic,5,18.7,116238,Fair
+Mahindra,Thar,2021,Hatchback,Diesel,Manual,5,24.9,64117,Good
+Honda,Elevate,2016,Hatchback,Petrol,Manual,7,16.0,179633,Needs Service
+Hyundai,Creta,2025,SUV,Petrol,Manual,7,24.4,14242,Excellent
+MG,Astor,2023,Hatchback,Diesel,Manual,4,21.2,15419,Excellent
+Kia,Sonet,2023,Hatchback,Petrol,Manual,7,19.4,137505,Fair
+Mahindra,Bolero,2019,Hatchback,CNG,Manual,4,16.2,176645,Needs Service
+Kia,Seltos,2020,SUV,Petrol,Automatic,4,15.9,47132,Good
+Maruti Suzuki,Baleno,2021,Hatchback,Diesel,Manual,5,14.4,78491,Good
+Toyota,Glanza,2023,Hatchback,Diesel,Manual,4,22.2,137391,Fair
+Toyota,Glanza,2024,Hatchback,Diesel,Manual,7,13.4,163382,Needs Service
+MG,Astor,2015,Hatchback,Petrol,Manual,4,18.6,90377,Fair
+Mahindra,Scorpio-N,2022,SUV,CNG,Manual,5,18.8,164387,Needs Service
+Maruti Suzuki,WagonR,2016,Hatchback,Petrol,Manual,5,12.2,55174,Good
+Hyundai,Verna,2018,Sedan,CNG,Automatic,5,19.1,31823,Good
+Toyota,Innova Hycross,2024,MPV,Petrol,Automatic,7,17.6,37006,Good
+Maruti Suzuki,Brezza,2017,Hatchback,Diesel,Automatic,5,21.6,59542,Good
+MG,Astor,2023,Hatchback,Petrol,Manual,5,12.9,81691,Fair
+Hyundai,Creta,2020,SUV,CNG,Manual,4,25.5,60197,Good
+Maruti Suzuki,Fronx,2017,Hatchback,Petrol,Automatic,5,16.6,6062,Excellent
+MG,Hector,2018,SUV,Diesel,Manual,5,12.5,102951,Fair
+Tata,Tiago,2020,Hatchback,Petrol,Manual,5,18.3,103428,Fair
+Honda,City,2023,Sedan,Diesel,Manual,7,16.3,131675,Fair
+Honda,Elevate,2021,Hatchback,CNG,Automatic,5,17.8,104984,Fair
+Kia,Seltos,2025,SUV,Petrol,Manual,5,12.2,179895,Needs Service
+Honda,Elevate,2024,Hatchback,Petrol,Automatic,7,23.5,118637,Fair
+Toyota,Innova Hycross,2023,MPV,Diesel,Automatic,5,12.5,138827,Fair
+Honda,City,2021,Sedan,Diesel,Manual,7,27.6,47942,Good
+Hyundai,Exter,2018,SUV,Petrol,Automatic,4,12.8,96996,Fair
+Maruti Suzuki,Swift,2019,Hatchback,Petrol,Manual,5,23.7,106161,Fair
+Tata,Nexon,2016,SUV,CNG,Manual,4,19.6,121050,Fair
+Hyundai,i20,2019,Hatchback,Petrol,Manual,7,16.5,40695,Good
+Hyundai,Creta,2025,SUV,CNG,Automatic,7,16.0,64246,Good
+Hyundai,Venue,2019,SUV,Diesel,Manual,4,23.6,103173,Fair
+Toyota,Glanza,2016,Hatchback,Diesel,Manual,5,21.4,26099,Good
+Toyota,Fortuner,2022,Hatchback,CNG,Manual,4,12.8,155975,Needs Service
+Hyundai,Venue,2025,SUV,Diesel,Manual,5,17.4,151917,Needs Service
+Honda,Amaze,2024,Sedan,Diesel,Manual,7,21.8,53703,Good
+Honda,Elevate,2018,Hatchback,Petrol,Manual,7,16.2,96256,Fair
+Honda,City,2019,Sedan,Petrol,Manual,5,18.9,168583,Needs Service
+Mahindra,Scorpio-N,2020,SUV,CNG,Automatic,5,18.6,136625,Fair
+Hyundai,Venue,2017,SUV,CNG,Manual,4,24.2,172886,Needs Service
+Honda,City,2017,Sedan,CNG,Automatic,7,14.3,162431,Needs Service
+Mahindra,Thar,2017,Hatchback,CNG,Manual,5,23.9,157854,Needs Service
+Hyundai,i20,2025,Hatchback,Diesel,Automatic,5,25.0,37802,Good
+Kia,Carens,2023,MPV,CNG,Manual,5,19.3,42085,Good
+Mahindra,XUV700,2024,SUV,CNG,Manual,5,22.1,153546,Needs Service
+Mahindra,Scorpio-N,2023,SUV,CNG,Automatic,5,27.8,159772,Needs Service
+Toyota,Fortuner,2025,Hatchback,Diesel,Manual,7,13.5,90697,Fair
+Mahindra,XUV700,2016,SUV,CNG,Manual,5,14.9,93017,Fair
+Toyota,Fortuner,2024,Hatchback,CNG,Automatic,7,14.6,113936,Fair
+Tata,Harrier,2015,SUV,Diesel,Automatic,5,12.6,21024,Good
+Honda,City,2020,Sedan,Diesel,Manual,5,17.8,129319,Fair
+Tata,Tiago,2021,Hatchback,Petrol,Manual,5,14.6,138652,Fair
+MG,Astor,2018,Hatchback,Diesel,Automatic,5,12.2,9678,Excellent
+Honda,Amaze,2016,Sedan,Petrol,Automatic,5,19.5,115965,Fair
+Mahindra,Bolero,2017,Hatchback,CNG,Automatic,5,27.6,52427,Good
+Maruti Suzuki,Swift,2024,Hatchback,CNG,Manual,7,16.9,120773,Fair
+Kia,Sonet,2018,Hatchback,Petrol,Automatic,4,24.7,74339,Good
+MG,Astor,2018,Hatchback,Petrol,Manual,7,16.9,129226,Fair
+Toyota,Glanza,2025,Hatchback,Diesel,Automatic,7,27.9,42980,Good
+Honda,City,2016,Sedan,Diesel,Manual,4,20.8,49428,Good
+Kia,Seltos,2025,SUV,Diesel,Automatic,5,25.4,133978,Fair
+Honda,Elevate,2025,Hatchback,CNG,Manual,7,17.5,61062,Good
+Toyota,Glanza,2021,Hatchback,CNG,Manual,7,14.2,23134,Good
+Honda,City,2016,Sedan,Petrol,Automatic,4,27.0,101007,Fair
+Mahindra,Thar,2016,Hatchback,CNG,Manual,5,22.6,30819,Good
+Honda,City,2018,Sedan,Petrol,Automatic,4,18.4,75043,Good
+MG,Windsor EV,2021,Hatchback,Electric,Manual,5,7.7,165384,Needs Service
+Maruti Suzuki,WagonR,2016,Hatchback,Diesel,Manual,5,15.7,55311,Good
+Kia,Carens,2020,MPV,CNG,Manual,5,24.8,30531,Good
+Maruti Suzuki,WagonR,2016,Hatchback,Diesel,Manual,5,16.0,3090,Excellent
+Tata,Punch,2020,Hatchback,CNG,Manual,7,20.0,163476,Needs Service
+MG,Windsor EV,2015,Hatchback,Electric,Manual,4,7.2,54661,Good
+Tata,Tiago,2022,Hatchback,Petrol,Manual,5,18.5,165780,Needs Service
+Kia,Carens,2015,MPV,CNG,Automatic,7,23.0,102533,Fair
+Hyundai,Creta,2017,SUV,Petrol,Automatic,5,25.8,8962,Excellent
+Tata,Altroz,2016,Hatchback,Diesel,Automatic,4,22.9,151143,Needs Service
+Hyundai,i20,2024,Hatchback,CNG,Manual,4,23.6,121651,Fair
+Honda,Elevate,2015,Hatchback,Diesel,Manual,5,16.5,30139,Good
+Mahindra,Bolero,2019,Hatchback,Diesel,Manual,5,18.7,130240,Fair
+Tata,Nexon,2021,SUV,Diesel,Automatic,7,25.2,126434,Fair
+Hyundai,i20,2020,Hatchback,Petrol,Automatic,4,13.1,55327,Good
+MG,Hector,2022,SUV,Diesel,Manual,4,17.8,131728,Fair
+Toyota,Fortuner,2023,Hatchback,Diesel,Automatic,5,20.6,163268,Needs Service
+Maruti Suzuki,WagonR,2019,Hatchback,Diesel,Manual,5,20.8,144329,Needs Service
+Tata,Altroz,2024,Hatchback,Petrol,Manual,5,17.1,25755,Good
+Kia,Seltos,2018,SUV,Petrol,Manual,7,18.9,94095,Fair
+Kia,Sonet,2025,Hatchback,Diesel,Manual,5,19.9,153111,Needs Service
+Toyota,Innova Hycross,2020,MPV,Petrol,Automatic,5,18.2,110975,Fair
+Hyundai,Venue,2023,SUV,Petrol,Automatic,5,25.7,147260,Needs Service
+Mahindra,Scorpio-N,2024,SUV,Diesel,Manual,5,21.5,100558,Fair
+Honda,Amaze,2023,Sedan,CNG,Manual,4,13.8,35311,Good
+Toyota,Innova Hycross,2024,MPV,Diesel,Automatic,5,15.0,99716,Fair
+Tata,Punch,2020,Hatchback,Petrol,Automatic,5,20.7,92670,Fair
+Mahindra,XUV700,2015,SUV,Diesel,Manual,7,12.4,28635,Good
+Tata,Altroz,2020,Hatchback,Petrol,Manual,7,18.5,15313,Excellent
+MG,Comet EV,2016,Hatchback,Electric,Manual,5,7.7,138767,Fair
+Mahindra,XUV700,2024,SUV,Petrol,Manual,5,16.9,83380,Fair
+Honda,Elevate,2017,Hatchback,Diesel,Automatic,5,18.5,17210,Excellent
+Mahindra,Bolero,2017,Hatchback,CNG,Manual,7,25.5,41677,Good
+MG,Comet EV,2017,Hatchback,Electric,Automatic,5,6.0,163191,Needs Service
+Tata,Punch,2022,Hatchback,Petrol,Manual,4,24.7,83952,Fair
+Honda,City,2021,Sedan,Diesel,Manual,4,15.8,6606,Excellent
+Mahindra,Thar,2025,Hatchback,Diesel,Automatic,7,20.7,178645,Needs Service
+Honda,City,2019,Sedan,CNG,Manual,7,18.9,17554,Excellent
+Hyundai,Exter,2018,SUV,CNG,Manual,5,12.1,144867,Needs Service
+Kia,Sonet,2015,Hatchback,Petrol,Automatic,4,25.0,128218,Fair
+Honda,Elevate,2015,Hatchback,CNG,Automatic,7,14.9,34624,Good
+Kia,Sonet,2019,Hatchback,CNG,Manual,7,23.3,110518,Fair
+Hyundai,Venue,2025,SUV,Petrol,Manual,5,26.5,40522,Good
+Hyundai,Creta,2020,SUV,CNG,Manual,4,21.3,165373,Needs Service
+Honda,City,2024,Sedan,CNG,Manual,5,18.2,178533,Needs Service
+Toyota,Glanza,2016,Hatchback,Petrol,Manual,5,27.8,79730,Good
+MG,Windsor EV,2016,Hatchback,Electric,Manual,4,7.8,32524,Good
+Tata,Harrier,2024,SUV,Petrol,Automatic,5,18.6,74416,Good
+MG,Windsor EV,2016,Hatchback,Electric,Automatic,5,5.5,42452,Good
+Maruti Suzuki,Baleno,2015,Hatchback,Petrol,Automatic,4,27.4,30805,Good
+Honda,Amaze,2019,Sedan,CNG,Automatic,5,14.7,31188,Good
+MG,Astor,2025,Hatchback,Petrol,Automatic,5,25.2,53527,Good
+Mahindra,Bolero,2022,Hatchback,Petrol,Automatic,4,25.6,100307,Fair
+MG,Comet EV,2016,Hatchback,Electric,Automatic,5,6.5,131896,Fair
+Maruti Suzuki,Brezza,2024,Hatchback,Petrol,Manual,7,25.1,79314,Good
+Hyundai,Venue,2024,SUV,CNG,Manual,7,16.0,50283,Good
+Maruti Suzuki,Swift,2023,Hatchback,Diesel,Manual,5,13.6,106949,Fair
+Toyota,Glanza,2024,Hatchback,Diesel,Manual,4,25.2,35835,Good
+Tata,Altroz,2017,Hatchback,Diesel,Manual,5,18.6,37157,Good
+Honda,Amaze,2025,Sedan,Diesel,Manual,7,17.0,119395,Fair
+Honda,Amaze,2018,Sedan,Diesel,Manual,5,13.9,62639,Good
+Maruti Suzuki,Fronx,2023,Hatchback,CNG,Manual,5,12.6,120025,Fair
+Tata,Altroz,2021,Hatchback,Diesel,Manual,5,20.6,36824,Good
+Hyundai,i20,2023,Hatchback,CNG,Automatic,7,20.0,14737,Excellent
+Toyota,Fortuner,2021,Hatchback,Petrol,Automatic,5,24.8,69119,Good
+Kia,Seltos,2022,SUV,Diesel,Manual,5,18.5,154861,Needs Service
+Maruti Suzuki,WagonR,2021,Hatchback,CNG,Manual,4,18.8,69118,Good
+Honda,Amaze,2023,Sedan,Petrol,Manual,7,15.0,110974,Fair
+Honda,Elevate,2023,Hatchback,Petrol,Automatic,7,26.6,79700,Good
+Kia,Seltos,2016,SUV,Diesel,Automatic,5,27.2,110096,Fair
+Mahindra,XUV700,2024,SUV,Diesel,Manual,5,22.1,90679,Fair
+Hyundai,Verna,2020,Sedan,Diesel,Automatic,5,22.6,171671,Needs Service
+Mahindra,Scorpio-N,2018,SUV,Petrol,Manual,5,17.2,65427,Good
+Hyundai,Exter,2020,SUV,CNG,Manual,7,22.2,131716,Fair
+Tata,Tiago,2025,Hatchback,Petrol,Automatic,7,16.6,145009,Needs Service
+Mahindra,XUV700,2024,SUV,Petrol,Manual,7,14.4,44004,Good
+Kia,Seltos,2024,SUV,CNG,Manual,4,17.1,162161,Needs Service
+Toyota,Fortuner,2020,Hatchback,CNG,Manual,5,26.6,137257,Fair
+MG,Astor,2023,Hatchback,CNG,Manual,7,27.0,122154,Fair
+MG,Windsor EV,2019,Hatchback,Electric,Automatic,5,6.0,146467,Needs Service
+Tata,Tiago,2022,Hatchback,CNG,Automatic,5,25.8,77699,Good
+Honda,City,2022,Sedan,Diesel,Manual,5,12.3,102601,Fair
+Maruti Suzuki,WagonR,2017,Hatchback,Diesel,Manual,5,23.2,80240,Fair
+Hyundai,Creta,2017,SUV,CNG,Automatic,5,24.9,134502,Fair
+Hyundai,Creta,2015,SUV,Petrol,Manual,7,16.0,90295,Fair
+Hyundai,Verna,2016,Sedan,Petrol,Automatic,4,25.1,67099,Good
+Maruti Suzuki,WagonR,2019,Hatchback,Diesel,Automatic,5,20.2,86829,Fair
+Honda,Elevate,2020,Hatchback,Diesel,Manual,7,16.0,162068,Needs Service
+Kia,Carens,2016,MPV,CNG,Automatic,7,19.4,29589,Good
+Kia,Sonet,2019,Hatchback,Petrol,Manual,4,16.6,110267,Fair
+MG,Astor,2021,Hatchback,Petrol,Manual,7,12.1,161757,Needs Service
+Kia,Seltos,2017,SUV,Petrol,Manual,5,15.2,158021,Needs Service
+Toyota,Innova Hycross,2018,MPV,CNG,Manual,7,16.4,19607,Excellent
+Tata,Nexon,2019,SUV,Diesel,Automatic,5,16.3,30771,Good
+Hyundai,i20,2020,Hatchback,CNG,Automatic,7,14.0,117636,Fair
+MG,Comet EV,2019,Hatchback,Electric,Automatic,4,6.5,69969,Good
+Maruti Suzuki,WagonR,2023,Hatchback,CNG,Automatic,7,14.4,5658,Excellent
+Toyota,Glanza,2018,Hatchback,Petrol,Manual,7,20.7,178160,Needs Service
+Kia,Sonet,2019,Hatchback,Diesel,Manual,5,17.1,7162,Excellent
+Maruti Suzuki,Baleno,2019,Hatchback,Diesel,Automatic,4,21.4,53303,Good
+Toyota,Innova Hycross,2017,MPV,Diesel,Automatic,5,19.3,166293,Needs Service
+Hyundai,Verna,2022,Sedan,CNG,Manual,5,23.3,96834,Fair
+Honda,City,2017,Sedan,Petrol,Manual,5,14.3,31518,Good
+Tata,Tiago,2018,Hatchback,Diesel,Manual,7,16.6,144786,Needs Service
+Mahindra,XUV700,2023,SUV,Petrol,Manual,5,21.4,37299,Good
+Mahindra,Scorpio-N,2025,SUV,Diesel,Automatic,5,12.7,40940,Good
+Maruti Suzuki,WagonR,2022,Hatchback,Diesel,Manual,5,26.3,16118,Excellent
+Hyundai,Creta,2025,SUV,Petrol,Automatic,7,27.6,165110,Needs Service
+Tata,Tiago,2024,Hatchback,Diesel,Automatic,5,19.5,134612,Fair
+MG,Windsor EV,2020,Hatchback,Electric,Automatic,7,6.4,168908,Needs Service
+Maruti Suzuki,Swift,2023,Hatchback,Petrol,Manual,5,25.0,59291,Good
+Hyundai,Verna,2018,Sedan,Diesel,Manual,4,16.0,93793,Fair
+Maruti Suzuki,Swift,2020,Hatchback,Petrol,Automatic,5,25.5,176637,Needs Service
+Kia,Sonet,2020,Hatchback,Diesel,Automatic,5,27.5,173574,Needs Service
+Kia,Carens,2025,MPV,Diesel,Manual,4,22.5,107452,Fair
+Hyundai,Creta,2024,SUV,CNG,Automatic,7,14.2,95173,Fair
+MG,Comet EV,2020,Hatchback,Electric,Manual,5,6.8,156921,Needs Service
+MG,Comet EV,2022,Hatchback,Electric,Automatic,4,7.0,176116,Needs Service
+Honda,Amaze,2017,Sedan,Diesel,Manual,5,18.4,133305,Fair
+Tata,Altroz,2023,Hatchback,Petrol,Manual,7,23.5,84783,Fair
+Toyota,Glanza,2021,Hatchback,CNG,Manual,5,20.9,71540,Good
+Maruti Suzuki,Swift,2020,Hatchback,Petrol,Manual,7,15.3,88424,Fair
+Hyundai,Verna,2023,Sedan,Petrol,Manual,7,22.3,145096,Needs Service
+Toyota,Innova Hycross,2021,MPV,Petrol,Manual,5,19.0,64633,Good
+Kia,Seltos,2015,SUV,Diesel,Manual,5,26.9,67699,Good
+Tata,Harrier,2018,SUV,Petrol,Automatic,5,22.6,76164,Good
+Tata,Punch,2016,Hatchback,Petrol,Manual,4,22.8,23123,Good
+Mahindra,Bolero,2023,Hatchback,Petrol,Automatic,7,18.3,80410,Fair
+Tata,Altroz,2015,Hatchback,Petrol,Automatic,7,19.8,96428,Fair
+Kia,Seltos,2017,SUV,Petrol,Manual,5,17.4,72187,Good
+Tata,Punch,2021,Hatchback,Diesel,Manual,4,13.0,179255,Needs Service
+Kia,Carens,2022,MPV,Diesel,Automatic,5,13.4,1164,Excellent
+Hyundai,Exter,2020,SUV,Diesel,Automatic,4,24.2,111179,Fair
+Hyundai,i20,2024,Hatchback,CNG,Manual,5,20.4,4906,Excellent
+Hyundai,Venue,2025,SUV,CNG,Automatic,5,21.2,81916,Fair
+Maruti Suzuki,WagonR,2016,Hatchback,CNG,Manual,4,27.4,5301,Excellent
+Mahindra,Thar,2025,Hatchback,Diesel,Manual,7,27.0,78814,Good
+Mahindra,XUV700,2021,SUV,CNG,Automatic,7,13.5,48410,Good
+Kia,Seltos,2021,SUV,CNG,Manual,7,19.4,124616,Fair
+Kia,Carens,2016,MPV,Petrol,Automatic,7,13.4,9357,Excellent
+Kia,Sonet,2021,Hatchback,Diesel,Manual,5,27.0,30890,Good
+Honda,Elevate,2022,Hatchback,Petrol,Automatic,5,13.7,1553,Excellent
+Toyota,Innova Hycross,2021,MPV,CNG,Manual,7,25.2,127351,Fair
+MG,Hector,2015,SUV,Diesel,Manual,4,25.7,130295,Fair
+Maruti Suzuki,WagonR,2020,Hatchback,CNG,Manual,5,18.4,107282,Fair
+Hyundai,Venue,2025,SUV,Diesel,Manual,5,16.8,90941,Fair
+Tata,Tiago,2022,Hatchback,Petrol,Automatic,7,17.3,3121,Excellent
+Mahindra,XUV700,2016,SUV,Petrol,Manual,4,27.6,89341,Fair
+MG,Comet EV,2025,Hatchback,Electric,Manual,5,5.6,8800,Excellent
+Honda,Amaze,2025,Sedan,CNG,Manual,5,26.7,145436,Needs Service
+Hyundai,Exter,2016,SUV,Petrol,Manual,4,16.9,100483,Fair
+Hyundai,i20,2023,Hatchback,CNG,Automatic,7,22.1,84583,Fair
+Toyota,Innova Hycross,2019,MPV,Petrol,Manual,5,12.3,73692,Good
+Maruti Suzuki,Fronx,2021,Hatchback,Diesel,Automatic,5,18.6,74498,Good
+Hyundai,Venue,2019,SUV,CNG,Manual,5,26.8,29643,Good
+Mahindra,XUV700,2023,SUV,Diesel,Automatic,7,26.8,150332,Needs Service
+MG,Hector,2025,SUV,Petrol,Manual,5,18.3,127956,Fair
+Mahindra,Thar,2023,Hatchback,Diesel,Manual,5,15.8,99035,Fair
+Toyota,Innova Hycross,2025,MPV,Diesel,Automatic,7,26.1,98098,Fair
+Mahindra,Thar,2025,Hatchback,Petrol,Automatic,5,18.3,99646,Fair
+Hyundai,Venue,2015,SUV,Diesel,Automatic,4,20.9,139501,Fair
+Honda,City,2017,Sedan,Diesel,Manual,5,20.2,112878,Fair
+Honda,City,2022,Sedan,Petrol,Manual,5,24.8,3301,Excellent
+Toyota,Innova Hycross,2021,MPV,CNG,Automatic,7,20.4,45812,Good
+Tata,Altroz,2015,Hatchback,Petrol,Manual,5,18.5,179530,Needs Service
+Mahindra,XUV700,2016,SUV,Diesel,Automatic,7,13.8,163576,Needs Service
+Maruti Suzuki,Brezza,2020,Hatchback,Petrol,Manual,5,23.9,47734,Good
+MG,Hector,2021,SUV,Diesel,Manual,5,12.4,144124,Needs Service
+Maruti Suzuki,Fronx,2016,Hatchback,Petrol,Automatic,5,24.6,17188,Excellent
+MG,Comet EV,2016,Hatchback,Electric,Automatic,5,7.2,133829,Fair
+Honda,Amaze,2016,Sedan,CNG,Manual,7,21.7,73613,Good
+Hyundai,Venue,2021,SUV,Petrol,Manual,5,22.0,82364,Fair
+Toyota,Innova Hycross,2015,MPV,CNG,Manual,7,25.2,104732,Fair
+Maruti Suzuki,Swift,2021,Hatchback,CNG,Manual,4,27.9,70872,Good
+Hyundai,Verna,2020,Sedan,Diesel,Manual,5,18.1,159593,Needs Service
+Honda,Elevate,2020,Hatchback,Petrol,Manual,5,27.1,100041,Fair
+Maruti Suzuki,Fronx,2022,Hatchback,Diesel,Automatic,5,21.1,23205,Good
+MG,Windsor EV,2020,Hatchback,Electric,Automatic,5,7.8,16794,Excellent
+Honda,Elevate,2023,Hatchback,CNG,Manual,4,12.9,174312,Needs Service
+Mahindra,Bolero,2023,Hatchback,CNG,Manual,4,22.7,177022,Needs Service
+Mahindra,XUV700,2025,SUV,CNG,Manual,5,23.3,39773,Good
+Maruti Suzuki,Swift,2023,Hatchback,Petrol,Manual,7,13.4,179366,Needs Service
+MG,Astor,2020,Hatchback,CNG,Manual,4,17.4,25209,Good
+MG,Hector,2020,SUV,Diesel,Manual,7,15.3,155701,Needs Service
+Honda,City,2017,Sedan,Petrol,Automatic,5,20.1,58425,Good
+Hyundai,Creta,2021,SUV,CNG,Manual,5,27.1,169840,Needs Service
+Mahindra,XUV700,2016,SUV,Petrol,Manual,5,14.6,58307,Good
+Tata,Nexon,2025,SUV,Petrol,Manual,5,15.8,80597,Fair
+Honda,City,2024,Sedan,Petrol,Automatic,5,15.9,179610,Needs Service
+Kia,Sonet,2016,Hatchback,CNG,Manual,5,21.4,85784,Fair
+Maruti Suzuki,Baleno,2023,Hatchback,CNG,Manual,5,18.8,59767,Good
+Honda,Elevate,2016,Hatchback,Diesel,Automatic,7,15.6,125471,Fair
+MG,Astor,2022,Hatchback,Petrol,Manual,7,16.7,48531,Good
+Hyundai,Venue,2015,SUV,CNG,Manual,5,21.4,80142,Fair
+Honda,City,2020,Sedan,Petrol,Automatic,5,21.6,49087,Good
+Tata,Tiago,2022,Hatchback,Petrol,Manual,5,23.3,23608,Good
+Kia,Seltos,2023,SUV,Petrol,Manual,5,22.5,178488,Needs Service
+Kia,Seltos,2019,SUV,CNG,Manual,7,16.7,176537,Needs Service
+Tata,Altroz,2025,Hatchback,CNG,Manual,5,18.8,146776,Needs Service
+MG,Hector,2023,SUV,Diesel,Automatic,5,24.9,15796,Excellent
+Hyundai,Creta,2017,SUV,Diesel,Manual,4,24.3,109253,Fair
+MG,Windsor EV,2022,Hatchback,Electric,Manual,7,5.5,62004,Good
+Hyundai,Exter,2023,SUV,CNG,Manual,7,14.4,76654,Good
+Toyota,Glanza,2018,Hatchback,CNG,Manual,5,16.5,33185,Good
+Kia,Seltos,2023,SUV,Petrol,Manual,5,18.6,48558,Good
+Mahindra,XUV700,2024,SUV,Petrol,Manual,7,17.5,114509,Fair
+Toyota,Innova Hycross,2023,MPV,Petrol,Automatic,5,24.2,95487,Fair
+Honda,Elevate,2023,Hatchback,Petrol,Manual,5,18.8,27490,Good
+Tata,Harrier,2021,SUV,Petrol,Manual,4,20.6,17844,Excellent
+MG,Windsor EV,2017,Hatchback,Electric,Manual,5,7.1,156261,Needs Service
+MG,Astor,2023,Hatchback,Petrol,Manual,4,18.9,102753,Fair
+Tata,Harrier,2019,SUV,CNG,Manual,5,17.5,160634,Needs Service
+Kia,Sonet,2020,Hatchback,CNG,Manual,5,20.1,128829,Fair
+Honda,City,2018,Sedan,CNG,Manual,7,25.4,145093,Needs Service
+MG,Comet EV,2018,Hatchback,Electric,Automatic,4,6.0,11324,Excellent
+Honda,City,2016,Sedan,Diesel,Automatic,5,16.0,175104,Needs Service
+Toyota,Glanza,2025,Hatchback,Diesel,Manual,7,22.9,97486,Fair
+MG,Windsor EV,2016,Hatchback,Electric,Manual,5,6.8,84556,Fair
+Tata,Tiago,2015,Hatchback,CNG,Manual,5,26.5,179375,Needs Service
+Maruti Suzuki,WagonR,2025,Hatchback,Diesel,Manual,5,20.2,1121,Excellent
+Toyota,Fortuner,2021,Hatchback,Diesel,Manual,5,17.3,154952,Needs Service
+MG,Astor,2019,Hatchback,Petrol,Automatic,5,21.2,66652,Good
+Mahindra,XUV700,2023,SUV,CNG,Automatic,5,20.3,57844,Good
+Mahindra,Bolero,2019,Hatchback,CNG,Automatic,5,17.2,115533,Fair
+Mahindra,XUV700,2016,SUV,Diesel,Manual,7,21.6,44289,Good
+Hyundai,Verna,2023,Sedan,CNG,Automatic,4,25.4,63227,Good
+MG,Astor,2016,Hatchback,Diesel,Manual,7,14.1,126589,Fair
+MG,Astor,2021,Hatchback,CNG,Manual,5,16.5,145022,Needs Service
+Kia,Carens,2025,MPV,Petrol,Manual,4,20.0,13138,Excellent
+Hyundai,Creta,2025,SUV,Petrol,Automatic,5,23.6,167900,Needs Service
+MG,Astor,2018,Hatchback,Petrol,Manual,7,17.2,128217,Fair
+Tata,Altroz,2023,Hatchback,Diesel,Automatic,4,20.6,173157,Needs Service
+Toyota,Glanza,2021,Hatchback,CNG,Manual,4,27.8,158031,Needs Service
+MG,Astor,2020,Hatchback,CNG,Automatic,5,21.2,171563,Needs Service
+Tata,Harrier,2016,SUV,Diesel,Manual,5,25.3,84596,Fair
+Maruti Suzuki,Brezza,2019,Hatchback,Petrol,Manual,7,24.3,3368,Excellent
+Honda,Amaze,2022,Sedan,Petrol,Automatic,5,17.3,157859,Needs Service
+Hyundai,i20,2025,Hatchback,Petrol,Manual,5,14.7,11305,Excellent
+Tata,Nexon,2015,SUV,Petrol,Manual,5,27.5,19564,Excellent
+Mahindra,Scorpio-N,2022,SUV,CNG,Manual,7,14.4,108591,Fair
+Mahindra,Bolero,2024,Hatchback,Diesel,Manual,7,14.5,148541,Needs Service
+Toyota,Fortuner,2025,Hatchback,CNG,Manual,4,21.5,118009,Fair
+Kia,Carens,2019,MPV,Petrol,Manual,7,24.2,86601,Fair
+Toyota,Fortuner,2016,Hatchback,CNG,Manual,7,18.4,43854,Good
+Tata,Tiago,2017,Hatchback,CNG,Automatic,5,13.3,144478,Needs Service
+Kia,Carens,2024,MPV,Diesel,Manual,5,27.1,175632,Needs Service
+Tata,Punch,2024,Hatchback,Diesel,Manual,7,18.4,162097,Needs Service
+Maruti Suzuki,Baleno,2022,Hatchback,Diesel,Manual,4,16.5,29643,Good
+Toyota,Fortuner,2016,Hatchback,Diesel,Manual,5,13.8,31320,Good
+Kia,Carens,2016,MPV,Diesel,Manual,4,27.6,15818,Excellent
+Hyundai,Creta,2020,SUV,Petrol,Automatic,7,22.7,137944,Fair
+Tata,Nexon,2021,SUV,CNG,Automatic,4,16.9,75222,Good
+Honda,Elevate,2015,Hatchback,Petrol,Manual,5,12.3,161949,Needs Service
+Toyota,Glanza,2022,Hatchback,CNG,Manual,7,20.6,52029,Good
+MG,Windsor EV,2020,Hatchback,Electric,Manual,7,6.1,117223,Fair
+Honda,Elevate,2015,Hatchback,Diesel,Manual,5,15.9,27352,Good
+Mahindra,Scorpio-N,2016,SUV,Diesel,Manual,4,20.3,3892,Excellent
+MG,Windsor EV,2019,Hatchback,Electric,Automatic,7,6.6,170110,Needs Service
+Toyota,Fortuner,2022,Hatchback,Diesel,Manual,4,13.1,45799,Good
+MG,Hector,2024,SUV,Petrol,Manual,5,12.9,134957,Fair
+Kia,Carens,2019,MPV,CNG,Manual,7,13.6,47754,Good
+Kia,Seltos,2018,SUV,Petrol,Manual,5,23.9,84440,Fair
+MG,Windsor EV,2025,Hatchback,Electric,Manual,5,5.4,103923,Fair
+Toyota,Fortuner,2020,Hatchback,CNG,Manual,5,22.7,84330,Fair
+Kia,Sonet,2018,Hatchback,Diesel,Automatic,4,12.1,57356,Good
+Kia,Carens,2019,MPV,CNG,Manual,5,18.5,179075,Needs Service
+Maruti Suzuki,Swift,2015,Hatchback,Petrol,Manual,7,23.7,100171,Fair
+Honda,Amaze,2018,Sedan,Petrol,Manual,7,25.1,98794,Fair
+Mahindra,Thar,2020,Hatchback,Petrol,Automatic,5,22.1,43661,Good
+Kia,Carens,2025,MPV,Petrol,Manual,5,14.3,2559,Excellent
+Maruti Suzuki,Brezza,2023,Hatchback,CNG,Automatic,7,20.4,118635,Fair
+MG,Comet EV,2023,Hatchback,Electric,Automatic,5,6.6,163209,Needs Service
+Hyundai,Exter,2020,SUV,Petrol,Manual,7,25.2,141519,Needs Service
+Tata,Nexon,2016,SUV,CNG,Automatic,5,18.9,105137,Fair
+Toyota,Glanza,2019,Hatchback,Petrol,Manual,5,23.3,32680,Good
+Honda,City,2025,Sedan,Petrol,Automatic,7,27.5,158097,Needs Service
+Toyota,Fortuner,2015,Hatchback,Diesel,Manual,4,17.3,171697,Needs Service
+Toyota,Glanza,2024,Hatchback,Diesel,Automatic,5,19.6,112802,Fair
+Toyota,Glanza,2022,Hatchback,CNG,Manual,5,25.8,57881,Good
+Kia,Seltos,2018,SUV,Petrol,Manual,5,17.3,85242,Fair
+Maruti Suzuki,Swift,2023,Hatchback,CNG,Manual,5,23.2,7769,Excellent
+Maruti Suzuki,WagonR,2024,Hatchback,Diesel,Automatic,7,20.7,53130,Good
+Tata,Tiago,2015,Hatchback,Diesel,Manual,4,16.2,14681,Excellent
+MG,Hector,2016,SUV,Diesel,Manual,4,24.8,151362,Needs Service
+Hyundai,i20,2022,Hatchback,CNG,Automatic,4,21.4,67562,Good
+MG,Astor,2025,Hatchback,Petrol,Automatic,5,23.6,81129,Fair
+Kia,Seltos,2015,SUV,Diesel,Manual,5,21.4,6775,Excellent
+MG,Windsor EV,2022,Hatchback,Electric,Manual,5,5.9,6097,Excellent
+MG,Hector,2016,SUV,Diesel,Manual,5,15.7,114131,Fair
+Hyundai,Exter,2022,SUV,Petrol,Automatic,5,12.2,165938,Needs Service
+Tata,Tiago,2021,Hatchback,Petrol,Manual,5,16.1,141949,Needs Service
+Tata,Nexon,2015,SUV,CNG,Automatic,5,13.2,9421,Excellent
+Mahindra,Thar,2022,Hatchback,Petrol,Manual,7,14.6,29791,Good
+Maruti Suzuki,Brezza,2024,Hatchback,CNG,Manual,5,12.0,40056,Good
+Honda,Amaze,2024,Sedan,CNG,Manual,5,25.2,121230,Fair
+Honda,City,2015,Sedan,Petrol,Manual,4,18.8,57636,Good
+Hyundai,Exter,2017,SUV,Petrol,Automatic,4,17.4,177339,Needs Service
+Toyota,Innova Hycross,2017,MPV,Diesel,Manual,7,15.4,54314,Good
+Honda,City,2019,Sedan,Diesel,Manual,4,19.8,166916,Needs Service
+MG,Windsor EV,2016,Hatchback,Electric,Automatic,4,6.0,106144,Fair
+Mahindra,XUV700,2024,SUV,Diesel,Automatic,5,26.6,3524,Excellent
+MG,Hector,2023,SUV,Petrol,Automatic,7,16.4,28119,Good
+Maruti Suzuki,Brezza,2023,Hatchback,CNG,Manual,5,27.5,15681,Excellent
+Mahindra,XUV700,2017,SUV,Diesel,Manual,4,17.4,171596,Needs Service
+Toyota,Innova Hycross,2015,MPV,Diesel,Automatic,5,22.8,160086,Needs Service
+MG,Astor,2025,Hatchback,Diesel,Manual,7,27.8,122083,Fair
+Mahindra,Thar,2018,Hatchback,CNG,Manual,5,14.9,35420,Good
+Honda,City,2022,Sedan,CNG,Automatic,7,21.5,166066,Needs Service
+Maruti Suzuki,WagonR,2025,Hatchback,CNG,Manual,4,23.2,62894,Good
+Toyota,Glanza,2015,Hatchback,CNG,Manual,5,15.8,136044,Fair
+Maruti Suzuki,WagonR,2015,Hatchback,Petrol,Automatic,7,22.3,52027,Good
+Hyundai,Verna,2015,Sedan,Petrol,Manual,5,14.6,124545,Fair
+Hyundai,i20,2016,Hatchback,Petrol,Manual,7,20.8,71868,Good
+Kia,Seltos,2015,SUV,CNG,Manual,7,14.6,65503,Good
+Hyundai,Creta,2024,SUV,CNG,Manual,5,15.8,154304,Needs Service
+Hyundai,Verna,2021,Sedan,Petrol,Manual,7,16.3,110600,Fair
+MG,Comet EV,2025,Hatchback,Electric,Automatic,4,7.0,72934,Good
+Honda,Amaze,2023,Sedan,CNG,Automatic,4,20.9,14034,Excellent
+Maruti Suzuki,Fronx,2025,Hatchback,Diesel,Manual,5,12.3,59548,Good
+Kia,Seltos,2017,SUV,CNG,Manual,5,25.0,137618,Fair
+Honda,Amaze,2018,Sedan,CNG,Automatic,7,14.7,58337,Good
+Hyundai,Creta,2024,SUV,CNG,Manual,5,19.2,124789,Fair
+Honda,City,2017,Sedan,Petrol,Manual,5,16.5,85446,Fair
+Maruti Suzuki,WagonR,2015,Hatchback,Petrol,Manual,5,12.4,96934,Fair
+Maruti Suzuki,Swift,2022,Hatchback,Diesel,Automatic,4,17.3,22146,Good
+MG,Hector,2023,SUV,Petrol,Manual,5,26.0,168775,Needs Service
+MG,Hector,2025,SUV,CNG,Automatic,7,26.5,124317,Fair
+Kia,Sonet,2025,Hatchback,Petrol,Manual,5,25.5,136652,Fair
+Hyundai,Creta,2016,SUV,Petrol,Manual,7,18.7,1125,Excellent
+Toyota,Innova Hycross,2023,MPV,Diesel,Manual,4,25.1,75930,Good
+Hyundai,Creta,2024,SUV,CNG,Manual,7,17.3,48436,Good
+Tata,Punch,2022,Hatchback,CNG,Manual,5,25.9,74652,Good
+Mahindra,Bolero,2024,Hatchback,CNG,Manual,5,13.9,170895,Needs Service
+Kia,Sonet,2024,Hatchback,Diesel,Manual,7,20.9,132755,Fair
+Mahindra,XUV700,2019,SUV,Petrol,Manual,7,21.5,62964,Good
+Tata,Tiago,2015,Hatchback,CNG,Manual,7,27.0,174349,Needs Service
+Maruti Suzuki,WagonR,2020,Hatchback,Petrol,Manual,7,27.8,162731,Needs Service
+Tata,Altroz,2017,Hatchback,Diesel,Automatic,7,25.5,163719,Needs Service
+Maruti Suzuki,Brezza,2016,Hatchback,CNG,Manual,7,18.2,171524,Needs Service
+Honda,City,2016,Sedan,Petrol,Automatic,5,25.4,89351,Fair
+Honda,City,2022,Sedan,CNG,Automatic,5,25.2,100501,Fair
+Mahindra,Bolero,2020,Hatchback,Petrol,Manual,7,23.0,71592,Good
+Tata,Altroz,2020,Hatchback,CNG,Automatic,4,18.2,18077,Excellent
+Mahindra,XUV700,2023,SUV,CNG,Automatic,5,17.9,101529,Fair
+Toyota,Innova Hycross,2021,MPV,Petrol,Manual,5,26.4,14139,Excellent
+Maruti Suzuki,Baleno,2021,Hatchback,CNG,Manual,5,17.2,58625,Good
+Maruti Suzuki,Swift,2015,Hatchback,Petrol,Manual,4,26.4,39525,Good
+Hyundai,Creta,2024,SUV,Petrol,Manual,5,14.2,25437,Good
+Tata,Nexon,2019,SUV,Diesel,Manual,4,22.5,122835,Fair
+Mahindra,Bolero,2016,Hatchback,Diesel,Automatic,5,20.9,101636,Fair
+Mahindra,Scorpio-N,2023,SUV,Diesel,Automatic,5,23.6,11039,Excellent
+Kia,Seltos,2023,SUV,Diesel,Manual,4,14.0,113064,Fair
+Mahindra,Bolero,2015,Hatchback,Diesel,Automatic,5,25.3,71219,Good
+Honda,Amaze,2017,Sedan,CNG,Manual,5,17.2,99883,Fair
+Maruti Suzuki,Brezza,2015,Hatchback,Diesel,Automatic,5,14.2,153851,Needs Service
+Mahindra,Thar,2017,Hatchback,Petrol,Manual,4,12.7,141117,Needs Service
+Honda,Amaze,2016,Sedan,CNG,Automatic,5,22.5,89592,Fair
+MG,Comet EV,2022,Hatchback,Electric,Automatic,4,5.9,60249,Good
+Tata,Punch,2020,Hatchback,Diesel,Manual,4,27.5,3154,Excellent
+Hyundai,Exter,2025,SUV,Diesel,Manual,7,16.0,162304,Needs Service
+Maruti Suzuki,Fronx,2023,Hatchback,CNG,Automatic,7,13.9,108345,Fair
+Tata,Harrier,2021,SUV,Petrol,Manual,5,23.1,62694,Good
+Kia,Sonet,2020,Hatchback,CNG,Manual,7,21.9,44909,Good
+Kia,Sonet,2015,Hatchback,Petrol,Automatic,5,19.8,50279,Good
+MG,Comet EV,2015,Hatchback,Electric,Manual,4,5.3,76332,Good
+Kia,Sonet,2021,Hatchback,Petrol,Manual,5,14.5,87465,Fair
+MG,Hector,2015,SUV,Diesel,Manual,5,21.3,53253,Good
+Toyota,Glanza,2015,Hatchback,CNG,Manual,5,22.6,98205,Fair
+Tata,Harrier,2017,SUV,CNG,Automatic,5,17.4,152921,Needs Service
+Kia,Sonet,2024,Hatchback,Diesel,Manual,5,20.0,166059,Needs Service
+Toyota,Fortuner,2020,Hatchback,Diesel,Manual,7,19.3,166152,Needs Service
+MG,Windsor EV,2022,Hatchback,Electric,Manual,7,7.8,115581,Fair
+Maruti Suzuki,Swift,2019,Hatchback,CNG,Automatic,4,19.3,174981,Needs Service
+Hyundai,Venue,2016,SUV,CNG,Manual,7,25.8,85224,Fair
+Kia,Sonet,2019,Hatchback,Diesel,Automatic,5,13.7,53372,Good
+MG,Comet EV,2016,Hatchback,Electric,Automatic,7,7.9,115252,Fair
+Tata,Punch,2023,Hatchback,Petrol,Automatic,4,25.0,134997,Fair
+Mahindra,Thar,2017,Hatchback,Petrol,Automatic,4,19.6,136084,Fair
+Toyota,Glanza,2019,Hatchback,Diesel,Automatic,4,27.7,83969,Fair
+Hyundai,i20,2025,Hatchback,Petrol,Automatic,5,24.1,111208,Fair
+Mahindra,XUV700,2021,SUV,Petrol,Manual,5,20.1,45852,Good
+Tata,Tiago,2020,Hatchback,CNG,Automatic,5,13.2,33512,Good
+Maruti Suzuki,Baleno,2020,Hatchback,Diesel,Manual,5,20.5,1705,Excellent
+Tata,Punch,2023,Hatchback,Petrol,Manual,5,13.4,62384,Good
+Tata,Altroz,2017,Hatchback,Petrol,Automatic,5,20.6,164714,Needs Service
+Tata,Nexon,2022,SUV,CNG,Automatic,4,21.2,54903,Good
+Maruti Suzuki,Baleno,2024,Hatchback,Petrol,Automatic,4,26.2,15230,Excellent
+Honda,Amaze,2021,Sedan,Diesel,Manual,5,21.8,145885,Needs Service
+Maruti Suzuki,WagonR,2019,Hatchback,Diesel,Manual,7,14.2,78374,Good
+Tata,Harrier,2016,SUV,CNG,Manual,5,21.3,43567,Good
+Honda,Elevate,2017,Hatchback,Diesel,Manual,7,14.7,118845,Fair
+Mahindra,Bolero,2025,Hatchback,CNG,Manual,5,13.0,173897,Needs Service
+Tata,Nexon,2020,SUV,Petrol,Manual,5,18.9,173390,Needs Service
+Hyundai,Venue,2018,SUV,Petrol,Manual,5,27.0,45822,Good
+Honda,Amaze,2019,Sedan,Diesel,Automatic,5,19.8,72133,Good
+Mahindra,Thar,2021,Hatchback,CNG,Manual,5,26.6,87937,Fair
+Hyundai,Creta,2020,SUV,CNG,Automatic,5,22.2,6507,Excellent
+Mahindra,XUV700,2022,SUV,CNG,Manual,4,19.9,6350,Excellent
+Hyundai,Venue,2017,SUV,Petrol,Manual,5,15.2,161760,Needs Service
+Maruti Suzuki,Brezza,2022,Hatchback,Petrol,Manual,5,25.6,73145,Good
+Toyota,Fortuner,2019,Hatchback,Petrol,Manual,7,25.2,36983,Good
+Honda,Elevate,2025,Hatchback,Diesel,Automatic,4,19.5,136035,Fair
+Honda,Elevate,2016,Hatchback,Petrol,Manual,4,20.9,115397,Fair
+Kia,Carens,2016,MPV,Diesel,Manual,7,15.5,130500,Fair
+Kia,Carens,2020,MPV,CNG,Automatic,4,16.1,124194,Fair
+MG,Astor,2020,Hatchback,Petrol,Automatic,7,22.7,40747,Good
+Kia,Seltos,2022,SUV,Petrol,Manual,5,24.9,127517,Fair
+Kia,Sonet,2019,Hatchback,Petrol,Manual,5,17.1,20170,Good
+Tata,Tiago,2025,Hatchback,CNG,Manual,5,23.1,47890,Good
+Mahindra,Bolero,2020,Hatchback,Diesel,Manual,7,15.4,54146,Good
+Tata,Altroz,2016,Hatchback,CNG,Manual,4,17.4,80753,Fair
+Toyota,Fortuner,2016,Hatchback,Petrol,Manual,7,23.2,45506,Good
+Kia,Carens,2025,MPV,CNG,Automatic,4,18.0,11305,Excellent
+Kia,Carens,2016,MPV,CNG,Manual,5,26.7,137150,Fair
+Honda,Elevate,2025,Hatchback,Diesel,Manual,5,17.1,97614,Fair
+Kia,Seltos,2018,SUV,CNG,Manual,7,27.6,130270,Fair
+Maruti Suzuki,Fronx,2016,Hatchback,CNG,Automatic,5,23.1,29054,Good
+MG,Hector,2018,SUV,CNG,Manual,5,18.0,123748,Fair
+Hyundai,Verna,2021,Sedan,Petrol,Automatic,5,13.8,164157,Needs Service
+Toyota,Glanza,2019,Hatchback,CNG,Automatic,5,18.5,160973,Needs Service
+Toyota,Fortuner,2023,Hatchback,Diesel,Manual,5,26.0,156352,Needs Service
+Kia,Seltos,2021,SUV,Petrol,Manual,5,27.9,28766,Good
+Hyundai,Creta,2019,SUV,Petrol,Manual,5,23.2,146159,Needs Service
+Toyota,Glanza,2021,Hatchback,Petrol,Manual,4,16.9,117358,Fair
+Mahindra,XUV700,2025,SUV,Petrol,Automatic,4,12.9,179055,Needs Service
+Tata,Tiago,2019,Hatchback,Diesel,Manual,7,15.8,97522,Fair
+Hyundai,Verna,2016,Sedan,Petrol,Automatic,4,18.0,20236,Good
+Honda,Amaze,2019,Sedan,Petrol,Manual,4,25.6,130979,Fair
+Kia,Seltos,2024,SUV,Petrol,Manual,4,12.7,63989,Good
+Tata,Nexon,2017,SUV,CNG,Manual,5,20.5,5041,Excellent
+Maruti Suzuki,Baleno,2025,Hatchback,CNG,Automatic,5,27.6,79761,Good
+Mahindra,XUV700,2021,SUV,Petrol,Automatic,7,19.4,169112,Needs Service
+Kia,Sonet,2021,Hatchback,Diesel,Manual,5,27.6,5056,Excellent
+Hyundai,i20,2018,Hatchback,Diesel,Manual,4,24.9,27435,Good
+Hyundai,i20,2025,Hatchback,CNG,Automatic,7,26.4,50541,Good
+Kia,Carens,2015,MPV,CNG,Manual,5,26.1,59724,Good
+Honda,City,2018,Sedan,CNG,Automatic,4,25.3,144356,Needs Service
+Kia,Sonet,2019,Hatchback,CNG,Manual,4,16.1,127775,Fair
+Maruti Suzuki,Baleno,2020,Hatchback,Petrol,Manual,7,12.4,165839,Needs Service
+Maruti Suzuki,Swift,2020,Hatchback,CNG,Manual,7,24.7,31018,Good
+Maruti Suzuki,WagonR,2016,Hatchback,Petrol,Manual,5,23.1,44475,Good
+Honda,City,2017,Sedan,Diesel,Manual,5,22.9,153791,Needs Service
+MG,Hector,2016,SUV,Petrol,Manual,5,26.0,74394,Good
+Mahindra,Thar,2021,Hatchback,CNG,Automatic,4,13.5,65726,Good
+Toyota,Glanza,2018,Hatchback,CNG,Manual,5,19.6,175487,Needs Service
+Kia,Carens,2021,MPV,Petrol,Manual,4,22.4,70199,Good
+Mahindra,Thar,2021,Hatchback,Petrol,Manual,4,24.4,151070,Needs Service
+Maruti Suzuki,Fronx,2022,Hatchback,Petrol,Manual,4,28.0,33733,Good
+Honda,Amaze,2021,Sedan,Diesel,Manual,4,17.4,35876,Good
+Kia,Carens,2022,MPV,CNG,Manual,4,15.0,121427,Fair
+Maruti Suzuki,Baleno,2021,Hatchback,Diesel,Manual,4,18.2,39579,Good
+Honda,Amaze,2022,Sedan,Diesel,Manual,5,27.1,56634,Good
+Honda,Elevate,2021,Hatchback,Diesel,Automatic,5,13.2,18896,Excellent
+Maruti Suzuki,Baleno,2018,Hatchback,CNG,Manual,4,14.0,46456,Good
+Hyundai,Exter,2017,SUV,Diesel,Automatic,4,15.8,52179,Good
+Tata,Nexon,2023,SUV,Diesel,Manual,7,20.7,115982,Fair
+Hyundai,Creta,2018,SUV,CNG,Manual,5,21.0,90246,Fair
+Honda,Amaze,2021,Sedan,Petrol,Automatic,4,27.2,90090,Fair
+Toyota,Glanza,2017,Hatchback,Diesel,Manual,7,24.1,1808,Excellent
+Honda,Elevate,2019,Hatchback,Petrol,Automatic,7,21.0,158983,Needs Service
+Honda,Elevate,2020,Hatchback,CNG,Manual,5,13.3,78438,Good
+Tata,Nexon,2021,SUV,CNG,Manual,5,14.9,87451,Fair
+MG,Astor,2020,Hatchback,CNG,Automatic,4,20.1,88012,Fair
+Mahindra,Bolero,2018,Hatchback,Diesel,Manual,5,25.0,61845,Good
+Honda,Elevate,2025,Hatchback,CNG,Manual,5,24.7,105783,Fair
+Mahindra,Scorpio-N,2020,SUV,Diesel,Automatic,7,13.7,56025,Good
